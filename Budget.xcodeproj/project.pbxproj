@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C36B1C91F192F9E00169C6F /* OperationMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C36B1C81F192F9E00169C6F /* OperationMO.swift */; };
 		5C61F8711F1691A4003F3AD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C61F8701F1691A4003F3AD9 /* AppDelegate.swift */; };
 		5C61F8731F1691A4003F3AD9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C61F8721F1691A4003F3AD9 /* ViewController.swift */; };
 		5C61F8761F1691A4003F3AD9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C61F8741F1691A4003F3AD9 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5C36B1C81F192F9E00169C6F /* OperationMO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationMO.swift; sourceTree = "<group>"; };
 		5C61F86D1F1691A4003F3AD9 /* Budget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Budget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C61F8701F1691A4003F3AD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C61F8721F1691A4003F3AD9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				5C61F87C1F1691A4003F3AD9 /* LaunchScreen.storyboard */,
 				5C61F87F1F1691A4003F3AD9 /* Info.plist */,
 				5C61F8771F1691A4003F3AD9 /* Budget.xcdatamodeld */,
+				5C36B1C81F192F9E00169C6F /* OperationMO.swift */,
 			);
 			path = Budget;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C61F8731F1691A4003F3AD9 /* ViewController.swift in Sources */,
+				5C36B1C91F192F9E00169C6F /* OperationMO.swift in Sources */,
 				5C61F8711F1691A4003F3AD9 /* AppDelegate.swift in Sources */,
 				5C61F8791F1691A4003F3AD9 /* Budget.xcdatamodeld in Sources */,
 			);

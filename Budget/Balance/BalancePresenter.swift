@@ -22,7 +22,7 @@ class BalancePresenter: BalancePresentationLogic {
     // MARK: Do something
 
     func presentSomething(response: Balance.Amount.Response) {
-        let viewModel = Balance.Amount.ViewModel(amount: "\(response.amount)€")
+        let viewModel = Balance.Amount.ViewModel(amount: "Amount: \(response.amount)")
         viewController?.displayAmount(viewModel: viewModel)
     }
 }

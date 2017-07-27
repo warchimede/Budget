@@ -17,21 +17,17 @@ protocol BalanceBusinessLogic {
 }
 
 protocol BalanceDataStore {
-    //var name: String { get set }
 }
 
 class BalanceInteractor: BalanceBusinessLogic, BalanceDataStore {
     var presenter: BalancePresentationLogic?
-    var worker: BalanceWorker?
-    //var name: String = ""
 
-    // MARK: Do something
+    // MARK: Compute balance amount
 
     func getAmount(request: Balance.Amount.Request) {
-        worker = BalanceWorker()
-        worker?.doSomeWork()
+        let amount = try! DataPersistenceController().retrieveOperations().reduce(0, { $0 + (($1.amount ?? 0) as Decimal) })
 
-        let response = Balance.Amount.Response(amount: 10)
+        let response = Balance.Amount.Response(amount: amount)
         presenter?.presentSomething(response: response)
     }
 }

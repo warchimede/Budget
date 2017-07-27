@@ -19,7 +19,7 @@ protocol BalancePresentationLogic {
 class BalancePresenter: BalancePresentationLogic {
     weak var viewController: BalanceDisplayLogic?
 
-    // MARK: Do something
+    // MARK: Present amount
 
     func presentAmount(response: Balance.Amount.Response) {
         let viewModel = Balance.Amount.ViewModel(amount: "\(response.amount)")

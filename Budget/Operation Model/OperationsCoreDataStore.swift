@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-class DataPersistenceController {
+class OperationsCoreDataStore {
 
     fileprivate var persistentContainer: NSPersistentContainer
 
@@ -44,18 +44,33 @@ class DataPersistenceController {
         }
     }
 
+    deinit {
+        do {
+            try save()
+        } catch {
+            fatalError("Error deinitializing OperationsCoreDataStore")
+        }
+    }
+
     func save() throws {
         let context = persistentContainer.viewContext
         if context.hasChanges {
             try context.save()
         }
     }
+}
 
-    func retrieveOperations() throws -> [OperationMO] {
-        let request = NSFetchRequest<OperationMO>(entityName: "Operation")
-        // TODO: Unit tests first
-//        let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
-//        request.sortDescriptors = [sortDescriptor]
-        return try persistentContainer.viewContext.fetch(request)
+extension OperationsCoreDataStore: OperationsStoreProtocol {
+    func fetchOperations() -> (operations: [Operation], error: OperationsStoreError?) {
+        do {
+            let request = NSFetchRequest<ManagedOperation>(entityName: "Operation")
+            let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
+            request.sortDescriptors = [sortDescriptor]
+            let results = try persistentContainer.viewContext.fetch(request)
+            let operations = results.map({ $0.toOperation() })
+            return (operations, nil)
+        } catch {
+            return ([], .cannotFetch("Cannont fetch operations"))
+        }
     }
 }

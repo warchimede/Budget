@@ -21,11 +21,12 @@ protocol BalanceDataStore {
 
 class BalanceInteractor: BalanceBusinessLogic, BalanceDataStore {
     var presenter: BalancePresentationLogic?
+    var operationsWorker = OperationsWorker(operationsStore: OperationsCoreDataStore())
 
     // MARK: Compute balance amount
 
     func getAmount(request: Balance.Amount.Request) {
-        let amount = try! DataPersistenceController().retrieveOperations().reduce(0, { $0 + (($1.amount ?? 0) as Decimal) })
+        let amount = operationsWorker.fetchOperations().reduce(0, { $0 + ($1.amount as Decimal) })
 
         let response = Balance.Amount.Response(amount: amount)
         presenter?.presentAmount(response: response)

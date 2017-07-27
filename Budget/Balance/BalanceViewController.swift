@@ -65,9 +65,9 @@ class BalanceViewController: UIViewController, BalanceDisplayLogic {
         getAmount()
     }
 
-    // MARK: Do something
+    // MARK: Display balance amount
 
-    //@IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var balanceButton: UIButton!
 
     func getAmount() {
         let request = Balance.Amount.Request()
@@ -75,7 +75,6 @@ class BalanceViewController: UIViewController, BalanceDisplayLogic {
     }
     
     func displayAmount(viewModel: Balance.Amount.ViewModel) {
-        //nameTextField.text = viewModel.name
-        print(viewModel.amount)
+        balanceButton.setTitle(viewModel.amount, for: .normal)
     }
 }

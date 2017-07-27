@@ -13,7 +13,7 @@
 import UIKit
 
 protocol BalancePresentationLogic {
-    func presentSomething(response: Balance.Amount.Response)
+    func presentAmount(response: Balance.Amount.Response)
 }
 
 class BalancePresenter: BalancePresentationLogic {
@@ -21,8 +21,8 @@ class BalancePresenter: BalancePresentationLogic {
 
     // MARK: Do something
 
-    func presentSomething(response: Balance.Amount.Response) {
-        let viewModel = Balance.Amount.ViewModel(amount: "Amount: \(response.amount)")
+    func presentAmount(response: Balance.Amount.Response) {
+        let viewModel = Balance.Amount.ViewModel(amount: "\(response.amount)")
         viewController?.displayAmount(viewModel: viewModel)
     }
 }

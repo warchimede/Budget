@@ -60,8 +60,8 @@ class BalanceViewController: UIViewController, BalanceDisplayLogic {
 
     // MARK: View lifecycle
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         getAmount()
     }
 

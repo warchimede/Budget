@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="joj-7y-Os8">
-                                <rect key="frame" x="15" y="293" width="345" height="80"/>
+                                <rect key="frame" x="15" y="293.5" width="345" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="BEJ-Ey-2JX"/>
                                 </constraints>
@@ -32,17 +32,28 @@
                                     <segue destination="BBB-7e-9Oc" kind="show" identifier="CreateOperation" id="k05-Ga-tiN"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="txV-gU-nvI" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="7GK-GQ-eSD"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="txV-gU-nvI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0Mr-88-81r"/>
+                            <constraint firstAttribute="trailing" secondItem="txV-gU-nvI" secondAttribute="trailing" id="6VH-Pc-r8P"/>
                             <constraint firstAttribute="trailing" secondItem="joj-7y-Os8" secondAttribute="trailing" constant="15" id="EYE-TZ-aBw"/>
                             <constraint firstItem="joj-7y-Os8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="I7O-GO-Gt4"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="txV-gU-nvI" secondAttribute="bottom" id="IR1-No-Gz4"/>
                             <constraint firstItem="joj-7y-Os8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="K1S-PD-Hlc"/>
                             <constraint firstItem="joj-7y-Os8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="nOK-Ib-HM2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="FTE-5g-bdy"/>
                     <connections>
+                        <outlet property="adBannerView" destination="txV-gU-nvI" id="UTI-aH-11N"/>
                         <outlet property="balanceButton" destination="joj-7y-Os8" id="tRr-LU-ObD"/>
                     </connections>
                 </viewController>

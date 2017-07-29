@@ -9,6 +9,7 @@ target 'Budget' do
   pod 'Fabric'
   pod 'Crashlytics'
   pod 'Firebase/Core'
+  pod 'Firebase/AdMob'
 
   target 'BudgetTests' do
     inherit! :search_paths

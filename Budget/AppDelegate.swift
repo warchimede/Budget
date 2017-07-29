@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         Fabric.with([Crashlytics.self])
         FirebaseApp.configure()
+        GADMobileAds.configure(withApplicationID: "ca-app-pub-7814673314543067~6958433240")
 
         return true
     }

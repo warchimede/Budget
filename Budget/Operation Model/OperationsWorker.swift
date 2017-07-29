@@ -22,7 +22,7 @@ class OperationsWorker {
     func fetchOperations() -> [Operation] {
         let (operations, error) = operationsStore.fetchOperations()
 
-        if let _ = error {
+        if error == nil {
             return []
         }
 

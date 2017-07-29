@@ -73,7 +73,7 @@ class BalanceViewController: UIViewController, BalanceDisplayLogic {
         let request = Balance.Amount.Request()
         interactor?.getAmount(request: request)
     }
-    
+
     func displayAmount(viewModel: Balance.Amount.ViewModel) {
         balanceButton.setTitle(viewModel.amount, for: .normal)
     }

@@ -11,20 +11,20 @@ import CoreData
 @testable import Budget
 
 class OperationsCoreDataStoreTests: XCTestCase {
-    
+
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
-    
+
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
+
     func testRetrieveOperationsShouldReturn_EmptyArray_When_EmptyBase() {
         // given
-        let container = NSPersistentContainer(name: "DataPersistenceControllerTests")
+        let container = NSPersistentContainer(name: "OperationsCoreDataStoreTests")
         let persistentStoreDescription = NSPersistentStoreDescription()
         persistentStoreDescription.type = NSInMemoryStoreType
         container.persistentStoreDescriptions = [persistentStoreDescription]
@@ -37,5 +37,4 @@ class OperationsCoreDataStoreTests: XCTestCase {
         XCTAssertNotNil(operations)
         XCTAssertEqual(operations.count, 0)
     }
-    
 }

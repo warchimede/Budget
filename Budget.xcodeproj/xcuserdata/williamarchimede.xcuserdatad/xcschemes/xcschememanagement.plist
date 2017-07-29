@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>Lint.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -23,6 +28,11 @@
 			<true/>
 		</dict>
 		<key>5C61F88E1F1691A4003F3AD9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5CBEEC271F2CD8DE00CDB0E7</key>
 		<dict>
 			<key>primary</key>
 			<true/>

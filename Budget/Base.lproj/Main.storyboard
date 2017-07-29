@@ -50,10 +50,10 @@
             </objects>
             <point key="canvasLocation" x="334" y="217"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Operation View Controller-->
         <scene sceneID="85X-fD-bsT">
             <objects>
-                <viewController id="BBB-7e-9Oc" sceneMemberID="viewController">
+                <viewController id="BBB-7e-9Oc" customClass="CreateOperationViewController" customModule="Budget" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dNY-gz-bWb"/>
                         <viewControllerLayoutGuide type="bottom" id="OfF-ta-eeQ"/>

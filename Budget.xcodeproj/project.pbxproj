@@ -38,6 +38,12 @@
 		5C80592C1F16C509002E2D81 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C80592A1F16C509002E2D81 /* Fabric.framework */; };
 		5C80592D1F16C509002E2D81 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C80592B1F16C509002E2D81 /* Crashlytics.framework */; };
 		5CBEEC251F2CD42000CDB0E7 /* OperationsCoreDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBEEC241F2CD42000CDB0E7 /* OperationsCoreDataStoreTests.swift */; };
+		5CBEEC3F1F2CF6A800CDB0E7 /* CreateOperationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBEEC391F2CF6A800CDB0E7 /* CreateOperationInteractor.swift */; };
+		5CBEEC401F2CF6A800CDB0E7 /* CreateOperationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBEEC3A1F2CF6A800CDB0E7 /* CreateOperationModels.swift */; };
+		5CBEEC411F2CF6A800CDB0E7 /* CreateOperationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBEEC3B1F2CF6A800CDB0E7 /* CreateOperationPresenter.swift */; };
+		5CBEEC421F2CF6A800CDB0E7 /* CreateOperationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBEEC3C1F2CF6A800CDB0E7 /* CreateOperationRouter.swift */; };
+		5CBEEC431F2CF6A800CDB0E7 /* CreateOperationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBEEC3D1F2CF6A800CDB0E7 /* CreateOperationViewController.swift */; };
+		5CBEEC441F2CF6A800CDB0E7 /* CreateOperationWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBEEC3E1F2CF6A800CDB0E7 /* CreateOperationWorker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +87,12 @@
 		5C80592A1F16C509002E2D81 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		5C80592B1F16C509002E2D81 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		5CBEEC241F2CD42000CDB0E7 /* OperationsCoreDataStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationsCoreDataStoreTests.swift; sourceTree = "<group>"; };
+		5CBEEC391F2CF6A800CDB0E7 /* CreateOperationInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateOperationInteractor.swift; sourceTree = "<group>"; };
+		5CBEEC3A1F2CF6A800CDB0E7 /* CreateOperationModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateOperationModels.swift; sourceTree = "<group>"; };
+		5CBEEC3B1F2CF6A800CDB0E7 /* CreateOperationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateOperationPresenter.swift; sourceTree = "<group>"; };
+		5CBEEC3C1F2CF6A800CDB0E7 /* CreateOperationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateOperationRouter.swift; sourceTree = "<group>"; };
+		5CBEEC3D1F2CF6A800CDB0E7 /* CreateOperationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateOperationViewController.swift; sourceTree = "<group>"; };
+		5CBEEC3E1F2CF6A800CDB0E7 /* CreateOperationWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateOperationWorker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				5C60F12E1F20E6D0006B1DB5 /* Balance */,
+				5CBEEC381F2CF65400CDB0E7 /* Create Operation */,
 				5C3CED161F2A806300DB145D /* Operation Model */,
 				5C61F8701F1691A4003F3AD9 /* AppDelegate.swift */,
 				5C61F8741F1691A4003F3AD9 /* Main.storyboard */,
@@ -185,6 +198,20 @@
 				5C61F8951F1691A4003F3AD9 /* Info.plist */,
 			);
 			path = BudgetUITests;
+			sourceTree = "<group>";
+		};
+		5CBEEC381F2CF65400CDB0E7 /* Create Operation */ = {
+			isa = PBXGroup;
+			children = (
+				5CBEEC391F2CF6A800CDB0E7 /* CreateOperationInteractor.swift */,
+				5CBEEC3A1F2CF6A800CDB0E7 /* CreateOperationModels.swift */,
+				5CBEEC3B1F2CF6A800CDB0E7 /* CreateOperationPresenter.swift */,
+				5CBEEC3C1F2CF6A800CDB0E7 /* CreateOperationRouter.swift */,
+				5CBEEC3D1F2CF6A800CDB0E7 /* CreateOperationViewController.swift */,
+				5CBEEC3E1F2CF6A800CDB0E7 /* CreateOperationWorker.swift */,
+			);
+			name = "Create Operation";
+			path = "Operation Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,16 +388,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CBEEC411F2CF6A800CDB0E7 /* CreateOperationPresenter.swift in Sources */,
+				5CBEEC441F2CF6A800CDB0E7 /* CreateOperationWorker.swift in Sources */,
 				5C3CED1C1F2A80CF00DB145D /* Operation.swift in Sources */,
 				5C60F1371F20EFDE006B1DB5 /* BalancePresenter.swift in Sources */,
 				5C3CED191F2A80B000DB145D /* ManagedOperation.swift in Sources */,
 				5C61F8711F1691A4003F3AD9 /* AppDelegate.swift in Sources */,
+				5CBEEC421F2CF6A800CDB0E7 /* CreateOperationRouter.swift in Sources */,
+				5CBEEC401F2CF6A800CDB0E7 /* CreateOperationModels.swift in Sources */,
 				5C61F8791F1691A4003F3AD9 /* Budget.xcdatamodeld in Sources */,
 				5C3CED1A1F2A80B000DB145D /* OperationsCoreDataStore.swift in Sources */,
 				5C60F1391F20EFDE006B1DB5 /* BalanceViewController.swift in Sources */,
+				5CBEEC431F2CF6A800CDB0E7 /* CreateOperationViewController.swift in Sources */,
 				5C3CED1E1F2A8A2F00DB145D /* OperationsWorker.swift in Sources */,
 				5C60F1361F20EFDE006B1DB5 /* BalanceModels.swift in Sources */,
 				5C60F1351F20EFDE006B1DB5 /* BalanceInteractor.swift in Sources */,
+				5CBEEC3F1F2CF6A800CDB0E7 /* CreateOperationInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

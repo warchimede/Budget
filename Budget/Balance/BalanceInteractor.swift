@@ -16,10 +16,7 @@ protocol BalanceBusinessLogic {
     func getAmount(request: Balance.Amount.Request)
 }
 
-protocol BalanceDataStore {
-}
-
-class BalanceInteractor: BalanceBusinessLogic, BalanceDataStore {
+class BalanceInteractor: BalanceBusinessLogic {
     var presenter: BalancePresentationLogic?
     var operationsWorker = OperationsWorker(operationsStore: OperationsCoreDataStore())
 

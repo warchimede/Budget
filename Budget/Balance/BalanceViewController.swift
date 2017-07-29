@@ -18,7 +18,6 @@ protocol BalanceDisplayLogic: class {
 
 class BalanceViewController: UIViewController, BalanceDisplayLogic {
     var interactor: BalanceBusinessLogic?
-    var router: (NSObjectProtocol & BalanceRoutingLogic & BalanceDataPassing)?
 
     // MARK: Object lifecycle
 
@@ -38,24 +37,9 @@ class BalanceViewController: UIViewController, BalanceDisplayLogic {
         let viewController = self
         let interactor = BalanceInteractor()
         let presenter = BalancePresenter()
-        let router = BalanceRouter()
         viewController.interactor = interactor
-        viewController.router = router
         interactor.presenter = presenter
         presenter.viewController = viewController
-        router.viewController = viewController
-        router.dataStore = interactor
-    }
-
-    // MARK: Routing
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let scene = segue.identifier {
-            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-            if let router = router, router.responds(to: selector) {
-                router.perform(selector, with: segue)
-            }
-        }
     }
 
     // MARK: View lifecycle

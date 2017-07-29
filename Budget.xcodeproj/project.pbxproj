@@ -28,7 +28,6 @@
 		5C60F1351F20EFDE006B1DB5 /* BalanceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C60F12F1F20EFDE006B1DB5 /* BalanceInteractor.swift */; };
 		5C60F1361F20EFDE006B1DB5 /* BalanceModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C60F1301F20EFDE006B1DB5 /* BalanceModels.swift */; };
 		5C60F1371F20EFDE006B1DB5 /* BalancePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C60F1311F20EFDE006B1DB5 /* BalancePresenter.swift */; };
-		5C60F1381F20EFDE006B1DB5 /* BalanceRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C60F1321F20EFDE006B1DB5 /* BalanceRouter.swift */; };
 		5C60F1391F20EFDE006B1DB5 /* BalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C60F1331F20EFDE006B1DB5 /* BalanceViewController.swift */; };
 		5C61F8711F1691A4003F3AD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C61F8701F1691A4003F3AD9 /* AppDelegate.swift */; };
 		5C61F8761F1691A4003F3AD9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C61F8741F1691A4003F3AD9 /* Main.storyboard */; };
@@ -66,7 +65,6 @@
 		5C60F12F1F20EFDE006B1DB5 /* BalanceInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalanceInteractor.swift; sourceTree = "<group>"; };
 		5C60F1301F20EFDE006B1DB5 /* BalanceModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalanceModels.swift; sourceTree = "<group>"; };
 		5C60F1311F20EFDE006B1DB5 /* BalancePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalancePresenter.swift; sourceTree = "<group>"; };
-		5C60F1321F20EFDE006B1DB5 /* BalanceRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalanceRouter.swift; sourceTree = "<group>"; };
 		5C60F1331F20EFDE006B1DB5 /* BalanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalanceViewController.swift; sourceTree = "<group>"; };
 		5C61F86D1F1691A4003F3AD9 /* Budget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Budget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C61F8701F1691A4003F3AD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -129,7 +127,6 @@
 				5C60F12F1F20EFDE006B1DB5 /* BalanceInteractor.swift */,
 				5C60F1301F20EFDE006B1DB5 /* BalanceModels.swift */,
 				5C60F1311F20EFDE006B1DB5 /* BalancePresenter.swift */,
-				5C60F1321F20EFDE006B1DB5 /* BalanceRouter.swift */,
 				5C60F1331F20EFDE006B1DB5 /* BalanceViewController.swift */,
 			);
 			path = Balance;
@@ -369,7 +366,6 @@
 				5C3CED191F2A80B000DB145D /* ManagedOperation.swift in Sources */,
 				5C61F8711F1691A4003F3AD9 /* AppDelegate.swift in Sources */,
 				5C61F8791F1691A4003F3AD9 /* Budget.xcdatamodeld in Sources */,
-				5C60F1381F20EFDE006B1DB5 /* BalanceRouter.swift in Sources */,
 				5C3CED1A1F2A80B000DB145D /* OperationsCoreDataStore.swift in Sources */,
 				5C60F1391F20EFDE006B1DB5 /* BalanceViewController.swift in Sources */,
 				5C3CED1E1F2A8A2F00DB145D /* OperationsWorker.swift in Sources */,

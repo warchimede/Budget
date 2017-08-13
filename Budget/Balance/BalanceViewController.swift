@@ -75,7 +75,7 @@ class BalanceViewController: UIViewController, BalanceDisplayLogic {
     private func setupAdBannerView() {
         adBannerView.rootViewController = self
         adBannerView.adUnitID = "ca-app-pub-3940256099942544/6300978111" // Test
-//        adBannerView.adUnitID = "ca-app-pub-7814673314543067/2788088095" // Prod
+        //        adBannerView.adUnitID = "ca-app-pub-7814673314543067/2788088095" // Prod
         adBannerView.load(GADRequest())
     }
 }

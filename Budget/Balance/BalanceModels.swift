@@ -20,7 +20,6 @@ enum Balance {
         }
         struct Response {
             let amount: Decimal
-
         }
         struct ViewModel {
             let amount: String

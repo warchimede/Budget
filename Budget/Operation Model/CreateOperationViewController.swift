@@ -11,6 +11,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 protocol CreateOperationDisplayLogic: class {
     func displayCreationDone()
@@ -45,6 +46,7 @@ class CreateOperationViewController: UIViewController, CreateOperationDisplayLog
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupAdBannerView()
     }
 
     // MARK: Create operation
@@ -56,5 +58,16 @@ class CreateOperationViewController: UIViewController, CreateOperationDisplayLog
 
     func displayCreationDone() {
         navigationController?.popViewController(animated: true)
+    }
+
+    // MARK: - Admob
+
+    @IBOutlet weak var adBannerView: GADBannerView!
+
+    private func setupAdBannerView() {
+        adBannerView.rootViewController = self
+        adBannerView.adUnitID = "ca-app-pub-3940256099942544/6300978111" // Test
+        //        adBannerView.adUnitID = "ca-app-pub-7814673314543067/2788088095" // Prod
+        adBannerView.load(GADRequest())
     }
 }

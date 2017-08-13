@@ -27,7 +27,9 @@
                                     <constraint firstAttribute="height" constant="80" id="BEJ-Ey-2JX"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <segue destination="BBB-7e-9Oc" kind="show" identifier="CreateOperation" id="k05-Ga-tiN"/>
                                 </connections>
@@ -40,7 +42,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.2392156869" green="0.67450982329999998" blue="0.96862745289999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="txV-gU-nvI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0Mr-88-81r"/>
                             <constraint firstAttribute="trailing" secondItem="txV-gU-nvI" secondAttribute="trailing" id="6VH-Pc-r8P"/>
@@ -79,18 +81,34 @@
                                     <constraint firstAttribute="width" constant="80" id="O88-S3-aP8"/>
                                     <constraint firstAttribute="height" constant="80" id="lyR-Cc-XjI"/>
                                 </constraints>
-                                <state key="normal" title="Ok"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Ok">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="createOperation:" destination="BBB-7e-9Oc" eventType="touchUpInside" id="OhY-kP-IGV"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fJa-zS-VZT" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="UGO-36-2k2"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.2392156869" green="0.67450982329999998" blue="0.96862745289999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="12f-pE-lsR" firstAttribute="centerY" secondItem="6qB-n5-zUz" secondAttribute="centerY" id="8ap-EE-v0x"/>
+                            <constraint firstAttribute="trailing" secondItem="fJa-zS-VZT" secondAttribute="trailing" id="HWV-9q-kPR"/>
+                            <constraint firstItem="fJa-zS-VZT" firstAttribute="leading" secondItem="6qB-n5-zUz" secondAttribute="leading" id="Ug2-yu-PSe"/>
                             <constraint firstItem="12f-pE-lsR" firstAttribute="centerX" secondItem="6qB-n5-zUz" secondAttribute="centerX" id="Yvh-xz-aLu"/>
+                            <constraint firstItem="OfF-ta-eeQ" firstAttribute="top" secondItem="fJa-zS-VZT" secondAttribute="bottom" id="igH-O1-tDF"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="adBannerView" destination="fJa-zS-VZT" id="dEO-pr-iMU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kkh-yN-xyd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

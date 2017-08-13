@@ -17,7 +17,7 @@ protocol CreateOperationDisplayLogic: class {
     func displayCreationDone()
 }
 
-class CreateOperationViewController: UIViewController, CreateOperationDisplayLogic {
+class CreateOperationViewController: AdViewController {
     var interactor: CreateOperationBusinessLogic?
 
     // MARK: Object lifecycle
@@ -42,32 +42,16 @@ class CreateOperationViewController: UIViewController, CreateOperationDisplayLog
         presenter.viewController = self
     }
 
-    // MARK: View lifecycle
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupAdBannerView()
-    }
-
     // MARK: Create operation
 
     @IBAction func createOperation(_ sender: Any) {
         let request = CreateOperation.Creation.Request(title: "test", amount: "10", isWithdrawal: true)
         interactor?.createOperation(request: request)
     }
+}
 
+extension CreateOperationViewController: CreateOperationDisplayLogic {
     func displayCreationDone() {
         navigationController?.popViewController(animated: true)
-    }
-
-    // MARK: - Admob
-
-    @IBOutlet weak var adBannerView: GADBannerView!
-
-    private func setupAdBannerView() {
-        adBannerView.rootViewController = self
-        adBannerView.adUnitID = "ca-app-pub-3940256099942544/6300978111" // Test
-        //        adBannerView.adUnitID = "ca-app-pub-7814673314543067/2788088095" // Prod
-        adBannerView.load(GADRequest())
     }
 }

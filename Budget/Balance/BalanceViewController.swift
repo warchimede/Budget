@@ -17,7 +17,7 @@ protocol BalanceDisplayLogic: class {
     func displayAmount(viewModel: Balance.Amount.ViewModel)
 }
 
-class BalanceViewController: UIViewController, BalanceDisplayLogic {
+class BalanceViewController: AdViewController {
     var interactor: BalanceBusinessLogic?
 
     // MARK: Object lifecycle
@@ -45,11 +45,6 @@ class BalanceViewController: UIViewController, BalanceDisplayLogic {
 
     // MARK: View lifecycle
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupAdBannerView()
-    }
-
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getAmount()
@@ -63,19 +58,10 @@ class BalanceViewController: UIViewController, BalanceDisplayLogic {
         let request = Balance.Amount.Request()
         interactor?.getAmount(request: request)
     }
+}
 
+extension BalanceViewController: BalanceDisplayLogic {
     func displayAmount(viewModel: Balance.Amount.ViewModel) {
         balanceButton.setTitle(viewModel.amount, for: .normal)
-    }
-
-    // MARK: - Admob
-
-    @IBOutlet weak var adBannerView: GADBannerView!
-
-    private func setupAdBannerView() {
-        adBannerView.rootViewController = self
-        adBannerView.adUnitID = "ca-app-pub-3940256099942544/6300978111" // Test
-        //        adBannerView.adUnitID = "ca-app-pub-7814673314543067/2788088095" // Prod
-        adBannerView.load(GADRequest())
     }
 }

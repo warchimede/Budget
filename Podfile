@@ -14,6 +14,8 @@ target 'Budget' do
   target 'BudgetTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'Firebase/Core'
+    pod 'Firebase/AdMob'
   end
 
   target 'BudgetUITests' do

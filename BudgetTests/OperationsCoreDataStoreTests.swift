@@ -29,12 +29,18 @@ class OperationsCoreDataStoreTests: XCTestCase {
         persistentStoreDescription.type = NSInMemoryStoreType
         container.persistentStoreDescriptions = [persistentStoreDescription]
         let sut = OperationsCoreDataStore(persistentContainer: container)
+        let expect = expectation(description: "Empty array")
 
         // when
-        let (operations, error) = sut.fetchOperations()
-        // then
-        XCTAssertNil(error)
-        XCTAssertNotNil(operations)
-        XCTAssertEqual(operations.count, 0)
+        sut.fetchAll() { operations, error in
+            // then
+            XCTAssertNil(error)
+            XCTAssertNotNil(operations)
+            XCTAssertEqual(operations!.count, 0)
+
+            expect.fulfill()
+        }
+
+        wait(for: [expect], timeout: 60.0)
     }
 }

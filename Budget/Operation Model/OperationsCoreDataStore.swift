@@ -65,16 +65,23 @@ class OperationsCoreDataStore {
 
 // Performing background tasks gives this object responsibilty to come back on main queue.
 extension OperationsCoreDataStore: OperationsStoreProtocol {
-    func fetchOperations() -> (operations: [Operation], error: OperationsStoreError?) {
-        do {
-            let request = NSFetchRequest<ManagedOperation>(entityName: "Operation")
-            let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
-            request.sortDescriptors = [sortDescriptor]
-            let results = try persistentContainer.viewContext.fetch(request)
-            let operations = results.map({ $0.toOperation() })
-            return (operations, nil)
-        } catch {
-            return ([], .cannotFetch("Cannont fetch operations"))
+
+    func fetchAll(completion: @escaping ([Operation]?, OperationsStoreError?) -> Void) {
+        persistentContainer.performBackgroundTask { context in
+            do {
+                let request = NSFetchRequest<ManagedOperation>(entityName: "Operation")
+                let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
+                request.sortDescriptors = [sortDescriptor]
+                let results = try context.fetch(request)
+                let operations = results.map({ $0.toOperation() })
+                DispatchQueue.main.async {
+                    completion(operations, nil)
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(nil, .cannotFetch("Cannont fetch operations"))
+                }
+            }
         }
     }
 

@@ -23,9 +23,10 @@ class BalanceInteractor: BalanceBusinessLogic {
     // MARK: Compute balance amount
 
     func getAmount(request: Balance.Amount.Request) {
-        let amount = operationsWorker.fetchOperations().reduce(0, { $0 + ($1.amount as Decimal) })
-
-        let response = Balance.Amount.Response(amount: amount)
-        presenter?.presentAmount(response: response)
+        operationsWorker.fetchAll { [weak self] operations in
+            let amount = operations.reduce(0, { $0 + ($1.amount as Decimal) })
+            let response = Balance.Amount.Response(amount: amount)
+            self?.presenter?.presentAmount(response: response)
+        }
     }
 }

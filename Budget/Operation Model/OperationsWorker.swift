@@ -19,14 +19,10 @@ class OperationsWorker {
         self.operationsStore = operationsStore
     }
 
-    func fetchOperations() -> [Operation] {
-        let (operations, error) = operationsStore.fetchOperations()
-
-        if error == nil {
-            return []
+    func fetchAll(completion: @escaping ([Operation]) -> Void) {
+        operationsStore.fetchAll { operations, _ in // Not handling errors for now.
+            completion(operations ?? [])
         }
-
-        return operations
     }
 
     func create(_ operation: Operation, completion: @escaping (OperationsStoreError?) -> Void) {
@@ -35,7 +31,7 @@ class OperationsWorker {
 }
 
 protocol OperationsStoreProtocol {
-    func fetchOperations() -> (operations: [Operation], error: OperationsStoreError?)
+    func fetchAll(completion: @escaping ([Operation]?, OperationsStoreError?) -> Void)
     func create(_ operation: Operation, completion: @escaping (OperationsStoreError?) -> Void)
 }
 

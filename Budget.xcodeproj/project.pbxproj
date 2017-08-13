@@ -39,7 +39,6 @@
 		5CBEEC3F1F2CF6A800CDB0E7 /* CreateOperationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBEEC391F2CF6A800CDB0E7 /* CreateOperationInteractor.swift */; };
 		5CBEEC401F2CF6A800CDB0E7 /* CreateOperationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBEEC3A1F2CF6A800CDB0E7 /* CreateOperationModels.swift */; };
 		5CBEEC411F2CF6A800CDB0E7 /* CreateOperationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBEEC3B1F2CF6A800CDB0E7 /* CreateOperationPresenter.swift */; };
-		5CBEEC421F2CF6A800CDB0E7 /* CreateOperationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBEEC3C1F2CF6A800CDB0E7 /* CreateOperationRouter.swift */; };
 		5CBEEC431F2CF6A800CDB0E7 /* CreateOperationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBEEC3D1F2CF6A800CDB0E7 /* CreateOperationViewController.swift */; };
 		5CC09F381F2D09D80008DEEB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5CC09F371F2D09D80008DEEB /* GoogleService-Info.plist */; };
 		69AEBBA83A7BA5BAA2B582BD /* Pods_BudgetTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE1E810CF7087C9358CA374 /* Pods_BudgetTests.framework */; };
@@ -93,7 +92,6 @@
 		5CBEEC391F2CF6A800CDB0E7 /* CreateOperationInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateOperationInteractor.swift; sourceTree = "<group>"; };
 		5CBEEC3A1F2CF6A800CDB0E7 /* CreateOperationModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateOperationModels.swift; sourceTree = "<group>"; };
 		5CBEEC3B1F2CF6A800CDB0E7 /* CreateOperationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateOperationPresenter.swift; sourceTree = "<group>"; };
-		5CBEEC3C1F2CF6A800CDB0E7 /* CreateOperationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateOperationRouter.swift; sourceTree = "<group>"; };
 		5CBEEC3D1F2CF6A800CDB0E7 /* CreateOperationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateOperationViewController.swift; sourceTree = "<group>"; };
 		5CC09F371F2D09D80008DEEB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5D36D024E2F5846E545AAC5C /* Pods_BudgetUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BudgetUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -216,7 +214,6 @@
 				5CBEEC391F2CF6A800CDB0E7 /* CreateOperationInteractor.swift */,
 				5CBEEC3A1F2CF6A800CDB0E7 /* CreateOperationModels.swift */,
 				5CBEEC3B1F2CF6A800CDB0E7 /* CreateOperationPresenter.swift */,
-				5CBEEC3C1F2CF6A800CDB0E7 /* CreateOperationRouter.swift */,
 				5CBEEC3D1F2CF6A800CDB0E7 /* CreateOperationViewController.swift */,
 			);
 			name = "Create Operation";
@@ -555,7 +552,6 @@
 				5C60F1371F20EFDE006B1DB5 /* BalancePresenter.swift in Sources */,
 				5C3CED191F2A80B000DB145D /* ManagedOperation.swift in Sources */,
 				5C61F8711F1691A4003F3AD9 /* AppDelegate.swift in Sources */,
-				5CBEEC421F2CF6A800CDB0E7 /* CreateOperationRouter.swift in Sources */,
 				5CBEEC401F2CF6A800CDB0E7 /* CreateOperationModels.swift in Sources */,
 				5C61F8791F1691A4003F3AD9 /* Budget.xcdatamodeld in Sources */,
 				5C3CED1A1F2A80B000DB145D /* OperationsCoreDataStore.swift in Sources */,

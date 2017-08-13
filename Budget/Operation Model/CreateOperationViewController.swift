@@ -18,7 +18,6 @@ protocol CreateOperationDisplayLogic: class {
 
 class CreateOperationViewController: UIViewController, CreateOperationDisplayLogic {
     var interactor: CreateOperationBusinessLogic?
-    var router: (NSObjectProtocol & CreateOperationRoutingLogic)?
 
     // MARK: Object lifecycle
 
@@ -37,12 +36,9 @@ class CreateOperationViewController: UIViewController, CreateOperationDisplayLog
     private func setup() {
         let interactor = CreateOperationInteractor()
         let presenter = CreateOperationPresenter()
-        let router = CreateOperationRouter()
         self.interactor = interactor
-        self.router = router
         interactor.presenter = presenter
         presenter.viewController = self
-        router.viewController = self
     }
 
     // MARK: View lifecycle
@@ -53,12 +49,12 @@ class CreateOperationViewController: UIViewController, CreateOperationDisplayLog
 
     // MARK: Create operation
 
-    func createOperation() {
+    @IBAction func createOperation(_ sender: Any) {
         let request = CreateOperation.Creation.Request(title: "test", amount: "10", isWithdrawal: true)
         interactor?.createOperation(request: request)
     }
 
     func displayCreationDone() {
-        router?.routeToBalance()
+        navigationController?.popViewController(animated: true)
     }
 }

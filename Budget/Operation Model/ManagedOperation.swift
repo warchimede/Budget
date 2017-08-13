@@ -18,7 +18,7 @@ class ManagedOperation: NSManagedObject {
         return Operation(amount: amount! as Decimal, date: date! as Date, title: title!)
     }
 
-    func from(operation: Operation) {
+    func from(_ operation: Operation) {
         amount = operation.amount as NSDecimalNumber
         date = operation.date as NSDate
         title = operation.title

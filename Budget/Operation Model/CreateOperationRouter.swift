@@ -12,49 +12,17 @@
 
 import UIKit
 
-@objc protocol CreateOperationRoutingLogic
-{
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
+@objc protocol CreateOperationRoutingLogic {
+
+    func routeToBalance()
 }
 
-protocol CreateOperationDataPassing
-{
-  var dataStore: CreateOperationDataStore? { get }
-}
+class CreateOperationRouter: NSObject, CreateOperationRoutingLogic {
+    weak var viewController: CreateOperationViewController?
 
-class CreateOperationRouter: NSObject, CreateOperationRoutingLogic, CreateOperationDataPassing
-{
-  weak var viewController: CreateOperationViewController?
-  var dataStore: CreateOperationDataStore?
-  
-  // MARK: Routing
-  
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
-  //{
-  //  if let segue = segue {
-  //    let destinationVC = segue.destination as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //  } else {
-  //    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-  //    let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //    navigateToSomewhere(source: viewController!, destination: destinationVC)
-  //  }
-  //}
+    // MARK: Routing & navigation
 
-  // MARK: Navigation
-  
-  //func navigateToSomewhere(source: CreateOperationViewController, destination: SomewhereViewController)
-  //{
-  //  source.show(destination, sender: nil)
-  //}
-  
-  // MARK: Passing data
-  
-  //func passDataToSomewhere(source: CreateOperationDataStore, destination: inout SomewhereDataStore)
-  //{
-  //  destination.name = source.name
-  //}
+    func routeToBalance() {
+        viewController?.dismiss(animated: true, completion: nil)
+    }
 }

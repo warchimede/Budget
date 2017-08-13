@@ -76,4 +76,17 @@ extension OperationsCoreDataStore: OperationsStoreProtocol {
             return ([], .cannotFetch("Cannont fetch operations"))
         }
     }
+
+    func create(_ operation: Operation, completion: @escaping (OperationsStoreError?) -> Void) {
+        persistentContainer.performBackgroundTask { context in
+            do {
+                let managedOperation = NSEntityDescription.insertNewObject(forEntityName: "Operation", into: context) as! ManagedOperation
+                managedOperation.from(operation)
+                try context.save()
+                completion(nil)
+            } catch {
+                completion(OperationsStoreError.cannotCreate("Cannot create this operation."))
+            }
+        }
+    }
 }

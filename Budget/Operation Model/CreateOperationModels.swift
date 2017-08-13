@@ -12,20 +12,14 @@
 
 import UIKit
 
-enum CreateOperation
-{
-  // MARK: Use cases
-  
-  enum Something
-  {
-    struct Request
-    {
+enum CreateOperation {
+    // MARK: Use cases
+
+    enum Creation {
+        struct Request {
+            let title: String?
+            let amount: String
+            let isWithdrawal: Bool
+        }
     }
-    struct Response
-    {
-    }
-    struct ViewModel
-    {
-    }
-  }
 }

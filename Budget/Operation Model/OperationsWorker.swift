@@ -28,12 +28,18 @@ class OperationsWorker {
 
         return operations
     }
+
+    func create(_ operation: Operation, completion: @escaping (OperationsStoreError?) -> Void) {
+        operationsStore.create(operation, completion: completion)
+    }
 }
 
 protocol OperationsStoreProtocol {
     func fetchOperations() -> (operations: [Operation], error: OperationsStoreError?)
+    func create(_ operation: Operation, completion: @escaping (OperationsStoreError?) -> Void)
 }
 
 enum OperationsStoreError: Error {
     case cannotFetch(String)
+    case cannotCreate(String)
 }

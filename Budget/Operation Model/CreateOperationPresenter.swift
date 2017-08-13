@@ -12,20 +12,16 @@
 
 import UIKit
 
-protocol CreateOperationPresentationLogic
-{
-  func presentSomething(response: CreateOperation.Something.Response)
+protocol CreateOperationPresentationLogic {
+    func presentCreationDone()
 }
 
-class CreateOperationPresenter: CreateOperationPresentationLogic
-{
-  weak var viewController: CreateOperationDisplayLogic?
-  
-  // MARK: Do something
-  
-  func presentSomething(response: CreateOperation.Something.Response)
-  {
-    let viewModel = CreateOperation.Something.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
-  }
+class CreateOperationPresenter: CreateOperationPresentationLogic {
+    weak var viewController: CreateOperationDisplayLogic?
+
+    // MARK: Present end of creation
+
+    func presentCreationDone() {
+        viewController?.displayCreationDone()
+    }
 }

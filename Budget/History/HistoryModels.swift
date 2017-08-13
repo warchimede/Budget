@@ -12,20 +12,19 @@
 
 import UIKit
 
-enum History
-{
-  // MARK: Use cases
-  
-  enum Something
-  {
-    struct Request
-    {
+enum History {
+    // MARK: Use cases
+
+    enum List {
+        struct Request {
+        }
+        struct Response {
+            let amount: Decimal
+            let operations: [Operation]
+        }
+        struct ViewModel {
+            let amount: String
+            let operations: [Operation]
+        }
     }
-    struct Response
-    {
-    }
-    struct ViewModel
-    {
-    }
-  }
 }

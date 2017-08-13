@@ -11,7 +11,6 @@
 //
 
 import UIKit
-import GoogleMobileAds
 
 protocol BalanceDisplayLogic: class {
     func displayAmount(viewModel: Balance.Amount.ViewModel)

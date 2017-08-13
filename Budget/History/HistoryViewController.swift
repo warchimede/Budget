@@ -12,78 +12,59 @@
 
 import UIKit
 
-protocol HistoryDisplayLogic: class
-{
-  func displaySomething(viewModel: History.Something.ViewModel)
+protocol HistoryDisplayLogic: class {
+    func displayList(viewModel: History.List.ViewModel)
 }
 
-class HistoryViewController: UIViewController, HistoryDisplayLogic
-{
-  var interactor: HistoryBusinessLogic?
-  var router: (NSObjectProtocol & HistoryRoutingLogic & HistoryDataPassing)?
+class HistoryViewController: UIViewController {
+    var interactor: HistoryBusinessLogic?
 
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = HistoryInteractor()
-    let presenter = HistoryPresenter()
-    let router = HistoryRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
+    // MARK: Object lifecycle
+
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
     }
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    doSomething()
-  }
-  
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
-  
-  func doSomething()
-  {
-    let request = History.Something.Request()
-    interactor?.doSomething(request: request)
-  }
-  
-  func displaySomething(viewModel: History.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
-  }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+
+    // MARK: Setup
+
+    private func setup() {
+        let viewController = self
+        let interactor = HistoryInteractor()
+        let presenter = HistoryPresenter()
+        viewController.interactor = interactor
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+    }
+
+    // MARK: View lifecycle
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        getList()
+    }
+
+    @IBOutlet weak var historyButton: UIButton!
+
+    @IBAction func onHistoryButtonTapped(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+
+    // MARK: Operations and amount
+
+    func getList() {
+        let request = History.List.Request()
+        interactor?.getList(request: request)
+    }
+}
+
+extension HistoryViewController: HistoryDisplayLogic {
+    func displayList(viewModel: History.List.ViewModel) {
+        historyButton.setTitle(viewModel.amount, for: .normal)
+    }
 }

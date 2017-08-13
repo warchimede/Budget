@@ -105,6 +105,9 @@
                                         <state key="normal" title="Button">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onHistoryButtonTapped:" destination="EBW-rJ-yA4" eventType="touchUpInside" id="KMF-2s-qMR"/>
+                                        </connections>
                                     </button>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vxZ-v5-KbG">
                                         <rect key="frame" x="0.0" y="80" width="375" height="517"/>
@@ -135,6 +138,9 @@
                             <constraint firstItem="wFx-zU-c5s" firstAttribute="leading" secondItem="CVp-hq-aPR" secondAttribute="leading" id="u6q-N1-IxR"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="historyButton" destination="QQc-8K-6RZ" id="sOO-KV-HyD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zvt-rz-ERX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

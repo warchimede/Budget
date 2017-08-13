@@ -12,30 +12,21 @@
 
 import UIKit
 
-protocol HistoryBusinessLogic
-{
-  func doSomething(request: History.Something.Request)
+protocol HistoryBusinessLogic {
+    func getList(request: History.List.Request)
 }
 
-protocol HistoryDataStore
-{
-  //var name: String { get set }
-}
+class HistoryInteractor: HistoryBusinessLogic {
+    var presenter: HistoryPresentationLogic?
+    var operationsWorker = OperationsWorker(operationsStore: OperationsCoreDataStore())
 
-class HistoryInteractor: HistoryBusinessLogic, HistoryDataStore
-{
-  var presenter: HistoryPresentationLogic?
-  var worker: HistoryWorker?
-  //var name: String = ""
-  
-  // MARK: Do something
-  
-  func doSomething(request: History.Something.Request)
-  {
-    worker = HistoryWorker()
-    worker?.doSomeWork()
-    
-    let response = History.Something.Response()
-    presenter?.presentSomething(response: response)
-  }
+    // MARK: Get list and compute amount
+
+    func getList(request: History.List.Request) {
+        operationsWorker.fetchAll { [weak self] operations in
+            let amount = operations.total()
+            let response = History.List.Response(amount: amount, operations: operations)
+            self?.presenter?.presentList(response: response)
+        }
+    }
 }

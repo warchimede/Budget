@@ -12,20 +12,17 @@
 
 import UIKit
 
-protocol HistoryPresentationLogic
-{
-  func presentSomething(response: History.Something.Response)
+protocol HistoryPresentationLogic {
+    func presentList(response: History.List.Response)
 }
 
-class HistoryPresenter: HistoryPresentationLogic
-{
-  weak var viewController: HistoryDisplayLogic?
-  
-  // MARK: Do something
-  
-  func presentSomething(response: History.Something.Response)
-  {
-    let viewModel = History.Something.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
-  }
+class HistoryPresenter: HistoryPresentationLogic {
+    weak var viewController: HistoryDisplayLogic?
+
+    // MARK: Present list of operations and amount
+
+    func presentList(response: History.List.Response) {
+        let viewModel = History.List.ViewModel(amount: "\(response.amount)", operations: response.operations)
+        viewController?.displayList(viewModel: viewModel)
+    }
 }

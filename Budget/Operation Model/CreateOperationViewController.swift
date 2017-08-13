@@ -11,7 +11,6 @@
 //
 
 import UIKit
-import GoogleMobileAds
 
 protocol CreateOperationDisplayLogic: class {
     func displayCreationDone()

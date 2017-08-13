@@ -45,9 +45,7 @@
 		5CC31B1A1F40D67E00AD2544 /* HistoryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC31B141F40D67E00AD2544 /* HistoryInteractor.swift */; };
 		5CC31B1B1F40D67E00AD2544 /* HistoryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC31B151F40D67E00AD2544 /* HistoryModels.swift */; };
 		5CC31B1C1F40D67E00AD2544 /* HistoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC31B161F40D67E00AD2544 /* HistoryPresenter.swift */; };
-		5CC31B1D1F40D67E00AD2544 /* HistoryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC31B171F40D67E00AD2544 /* HistoryRouter.swift */; };
 		5CC31B1E1F40D67E00AD2544 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC31B181F40D67E00AD2544 /* HistoryViewController.swift */; };
-		5CC31B1F1F40D67E00AD2544 /* HistoryWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC31B191F40D67E00AD2544 /* HistoryWorker.swift */; };
 		69AEBBA83A7BA5BAA2B582BD /* Pods_BudgetTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE1E810CF7087C9358CA374 /* Pods_BudgetTests.framework */; };
 		BC80CCADFB132796BA79DE21 /* Pods_BudgetUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D36D024E2F5846E545AAC5C /* Pods_BudgetUITests.framework */; };
 		FB0A62F9427F610B17DF65DA /* Pods_Budget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E10E04C111535AA019F18B88 /* Pods_Budget.framework */; };
@@ -105,9 +103,7 @@
 		5CC31B141F40D67E00AD2544 /* HistoryInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryInteractor.swift; sourceTree = "<group>"; };
 		5CC31B151F40D67E00AD2544 /* HistoryModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryModels.swift; sourceTree = "<group>"; };
 		5CC31B161F40D67E00AD2544 /* HistoryPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryPresenter.swift; sourceTree = "<group>"; };
-		5CC31B171F40D67E00AD2544 /* HistoryRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryRouter.swift; sourceTree = "<group>"; };
 		5CC31B181F40D67E00AD2544 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
-		5CC31B191F40D67E00AD2544 /* HistoryWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryWorker.swift; sourceTree = "<group>"; };
 		5D36D024E2F5846E545AAC5C /* Pods_BudgetUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BudgetUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71F907C665E87BFE50F9CBFC /* Pods-Budget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Budget.release.xcconfig"; path = "Pods/Target Support Files/Pods-Budget/Pods-Budget.release.xcconfig"; sourceTree = "<group>"; };
 		8FE1E810CF7087C9358CA374 /* Pods_BudgetTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BudgetTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -250,9 +246,7 @@
 				5CC31B141F40D67E00AD2544 /* HistoryInteractor.swift */,
 				5CC31B151F40D67E00AD2544 /* HistoryModels.swift */,
 				5CC31B161F40D67E00AD2544 /* HistoryPresenter.swift */,
-				5CC31B171F40D67E00AD2544 /* HistoryRouter.swift */,
 				5CC31B181F40D67E00AD2544 /* HistoryViewController.swift */,
-				5CC31B191F40D67E00AD2544 /* HistoryWorker.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -588,13 +582,11 @@
 				5C3CED1C1F2A80CF00DB145D /* Operation.swift in Sources */,
 				5C60F1371F20EFDE006B1DB5 /* BalancePresenter.swift in Sources */,
 				5C3CED191F2A80B000DB145D /* ManagedOperation.swift in Sources */,
-				5CC31B1F1F40D67E00AD2544 /* HistoryWorker.swift in Sources */,
 				5C61F8711F1691A4003F3AD9 /* AppDelegate.swift in Sources */,
 				5CBEEC401F2CF6A800CDB0E7 /* CreateOperationModels.swift in Sources */,
 				5CC31B1B1F40D67E00AD2544 /* HistoryModels.swift in Sources */,
 				5C61F8791F1691A4003F3AD9 /* Budget.xcdatamodeld in Sources */,
 				5C3CED1A1F2A80B000DB145D /* OperationsCoreDataStore.swift in Sources */,
-				5CC31B1D1F40D67E00AD2544 /* HistoryRouter.swift in Sources */,
 				5C60F1391F20EFDE006B1DB5 /* BalanceViewController.swift in Sources */,
 				5CBEEC431F2CF6A800CDB0E7 /* CreateOperationViewController.swift in Sources */,
 				5CC31B1E1F40D67E00AD2544 /* HistoryViewController.swift in Sources */,

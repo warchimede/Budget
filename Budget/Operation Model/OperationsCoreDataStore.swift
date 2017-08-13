@@ -63,6 +63,7 @@ class OperationsCoreDataStore {
     }
 }
 
+// Performing background tasks gives this object responsibilty to come back on main queue.
 extension OperationsCoreDataStore: OperationsStoreProtocol {
     func fetchOperations() -> (operations: [Operation], error: OperationsStoreError?) {
         do {
@@ -83,9 +84,13 @@ extension OperationsCoreDataStore: OperationsStoreProtocol {
                 let managedOperation = NSEntityDescription.insertNewObject(forEntityName: "Operation", into: context) as! ManagedOperation
                 managedOperation.from(operation)
                 try context.save()
-                completion(nil)
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
             } catch {
-                completion(OperationsStoreError.cannotCreate("Cannot create this operation."))
+                DispatchQueue.main.async {
+                    completion(OperationsStoreError.cannotCreate("Cannot create this operation."))
+                }
             }
         }
     }

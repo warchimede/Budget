@@ -24,7 +24,7 @@ class BalanceInteractor: BalanceBusinessLogic {
 
     func getAmount(request: Balance.Amount.Request) {
         operationsWorker.fetchAll { [weak self] operations in
-            let amount = operations.reduce(0, { $0 + ($1.amount as Decimal) })
+            let amount = operations.total()
             let response = Balance.Amount.Response(amount: amount)
             self?.presenter?.presentAmount(response: response)
         }

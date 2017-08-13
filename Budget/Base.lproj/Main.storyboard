@@ -72,7 +72,24 @@
                     <view key="view" contentMode="scaleToFill" id="6qB-n5-zUz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="12f-pE-lsR">
+                                <rect key="frame" x="147.5" y="293" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="O88-S3-aP8"/>
+                                    <constraint firstAttribute="height" constant="80" id="lyR-Cc-XjI"/>
+                                </constraints>
+                                <state key="normal" title="Ok"/>
+                                <connections>
+                                    <action selector="createOperation:" destination="BBB-7e-9Oc" eventType="touchUpInside" id="OhY-kP-IGV"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="12f-pE-lsR" firstAttribute="centerY" secondItem="6qB-n5-zUz" secondAttribute="centerY" id="8ap-EE-v0x"/>
+                            <constraint firstItem="12f-pE-lsR" firstAttribute="centerX" secondItem="6qB-n5-zUz" secondAttribute="centerX" id="Yvh-xz-aLu"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kkh-yN-xyd" userLabel="First Responder" sceneMemberID="firstResponder"/>

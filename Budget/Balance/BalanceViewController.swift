@@ -17,7 +17,7 @@ protocol BalanceDisplayLogic: class {
     func displayAmount(viewModel: Balance.Amount.ViewModel)
 }
 
-class BalanceViewController: AdViewController {
+class BalanceViewController: UIViewController {
     var interactor: BalanceBusinessLogic?
 
     // MARK: Object lifecycle

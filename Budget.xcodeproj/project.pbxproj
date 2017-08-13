@@ -41,7 +41,6 @@
 		5CBEEC411F2CF6A800CDB0E7 /* CreateOperationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBEEC3B1F2CF6A800CDB0E7 /* CreateOperationPresenter.swift */; };
 		5CBEEC431F2CF6A800CDB0E7 /* CreateOperationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBEEC3D1F2CF6A800CDB0E7 /* CreateOperationViewController.swift */; };
 		5CC09F381F2D09D80008DEEB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5CC09F371F2D09D80008DEEB /* GoogleService-Info.plist */; };
-		5CC31B021F40C31000AD2544 /* AdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC31B011F40C31000AD2544 /* AdViewController.swift */; };
 		5CC31B061F40CD0B00AD2544 /* Array+Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC31B051F40CD0B00AD2544 /* Array+Operation.swift */; };
 		5CC31B1A1F40D67E00AD2544 /* HistoryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC31B141F40D67E00AD2544 /* HistoryInteractor.swift */; };
 		5CC31B1B1F40D67E00AD2544 /* HistoryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC31B151F40D67E00AD2544 /* HistoryModels.swift */; };
@@ -102,7 +101,6 @@
 		5CBEEC3B1F2CF6A800CDB0E7 /* CreateOperationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateOperationPresenter.swift; sourceTree = "<group>"; };
 		5CBEEC3D1F2CF6A800CDB0E7 /* CreateOperationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateOperationViewController.swift; sourceTree = "<group>"; };
 		5CC09F371F2D09D80008DEEB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		5CC31B011F40C31000AD2544 /* AdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdViewController.swift; sourceTree = "<group>"; };
 		5CC31B051F40CD0B00AD2544 /* Array+Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Operation.swift"; sourceTree = "<group>"; };
 		5CC31B141F40D67E00AD2544 /* HistoryInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryInteractor.swift; sourceTree = "<group>"; };
 		5CC31B151F40D67E00AD2544 /* HistoryModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryModels.swift; sourceTree = "<group>"; };
@@ -192,7 +190,6 @@
 		5C61F86F1F1691A4003F3AD9 /* Budget */ = {
 			isa = PBXGroup;
 			children = (
-				5CC31B001F40C2E100AD2544 /* Ad */,
 				5C60F12E1F20E6D0006B1DB5 /* Balance */,
 				5CBEEC381F2CF65400CDB0E7 /* Create Operation */,
 				5CC31B041F40CCDD00AD2544 /* Extensions */,
@@ -237,14 +234,6 @@
 			);
 			name = "Create Operation";
 			path = "Operation Model";
-			sourceTree = "<group>";
-		};
-		5CC31B001F40C2E100AD2544 /* Ad */ = {
-			isa = PBXGroup;
-			children = (
-				5CC31B011F40C31000AD2544 /* AdViewController.swift */,
-			);
-			path = Ad;
 			sourceTree = "<group>";
 		};
 		5CC31B041F40CCDD00AD2544 /* Extensions */ = {
@@ -609,7 +598,6 @@
 				5C60F1391F20EFDE006B1DB5 /* BalanceViewController.swift in Sources */,
 				5CBEEC431F2CF6A800CDB0E7 /* CreateOperationViewController.swift in Sources */,
 				5CC31B1E1F40D67E00AD2544 /* HistoryViewController.swift in Sources */,
-				5CC31B021F40C31000AD2544 /* AdViewController.swift in Sources */,
 				5CC31B061F40CD0B00AD2544 /* Array+Operation.swift in Sources */,
 				5CC31B1C1F40D67E00AD2544 /* HistoryPresenter.swift in Sources */,
 				5C3CED1E1F2A8A2F00DB145D /* OperationsWorker.swift in Sources */,

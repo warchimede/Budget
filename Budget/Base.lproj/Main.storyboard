@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Balance-->
+        <!--Root View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController title="Balance" id="BYZ-38-t0r" customClass="BalanceViewController" customModule="Budget" customModuleProvider="target" sceneMemberID="viewController">
@@ -53,6 +53,13 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="7GK-GQ-eSD"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="adUnitID" value="ca-app-pub-3940256099942544/6300978111"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="autoloadEnabled" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="rootViewController" destination="BYZ-38-t0r" id="GID-fY-MYm"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                             </stackView>
@@ -67,7 +74,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="FTE-5g-bdy"/>
                     <connections>
-                        <outlet property="adBannerView" destination="txV-gU-nvI" id="UTI-aH-11N"/>
                         <outlet property="balanceButton" destination="joj-7y-Os8" id="tRr-LU-ObD"/>
                     </connections>
                 </viewController>
@@ -75,10 +81,10 @@
             </objects>
             <point key="canvasLocation" x="333.60000000000002" y="216.34182908545728"/>
         </scene>
-        <!--View Controller-->
+        <!--Root View Controller-->
         <scene sceneID="Tsp-8w-I0A">
             <objects>
-                <viewController id="EBW-rJ-yA4" sceneMemberID="viewController">
+                <viewController title="History" id="EBW-rJ-yA4" customClass="HistoryViewController" customModule="Budget" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xrl-4V-nAd"/>
                         <viewControllerLayoutGuide type="bottom" id="Zwl-tJ-lZg"/>
@@ -110,6 +116,13 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="tHv-pv-YDU"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="autoloadEnabled" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="adUnitID" value="ca-app-pub-3940256099942544/6300978111"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="rootViewController" destination="EBW-rJ-yA4" id="w2M-Q9-12d"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                             </stackView>
@@ -127,10 +140,10 @@
             </objects>
             <point key="canvasLocation" x="1325.5999999999999" y="716.49175412293857"/>
         </scene>
-        <!--Create Operation View Controller-->
+        <!--Root View Controller-->
         <scene sceneID="85X-fD-bsT">
             <objects>
-                <viewController id="BBB-7e-9Oc" customClass="CreateOperationViewController" customModule="Budget" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Create operation" id="BBB-7e-9Oc" customClass="CreateOperationViewController" customModule="Budget" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dNY-gz-bWb"/>
                         <viewControllerLayoutGuide type="bottom" id="OfF-ta-eeQ"/>
@@ -158,6 +171,13 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="UGO-36-2k2"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="adUnitID" value="ca-app-pub-3940256099942544/6300978111"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="autoloadEnabled" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="rootViewController" destination="BBB-7e-9Oc" id="kCc-lw-ZVV"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                             </stackView>
@@ -170,9 +190,6 @@
                             <constraint firstItem="OfF-ta-eeQ" firstAttribute="top" secondItem="ieK-0o-Lwd" secondAttribute="bottom" id="ng7-F5-hpQ"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="adBannerView" destination="fJa-zS-VZT" id="dEO-pr-iMU"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kkh-yN-xyd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

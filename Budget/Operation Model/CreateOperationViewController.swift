@@ -17,7 +17,7 @@ protocol CreateOperationDisplayLogic: class {
     func displayCreationDone()
 }
 
-class CreateOperationViewController: AdViewController {
+class CreateOperationViewController: UIViewController {
     var interactor: CreateOperationBusinessLogic?
 
     // MARK: Object lifecycle

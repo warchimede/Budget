@@ -47,12 +47,31 @@ class HistoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getList()
+        setupTableView()
     }
 
     @IBOutlet weak var historyButton: UIButton!
 
     @IBAction func onHistoryButtonTapped(_ sender: Any) {
         navigationController?.popViewController(animated: true)
+    }
+
+    @IBOutlet weak var operationsTableView: UITableView!
+
+    let operationCellIdentifier = "OperationCell"
+
+//    var operationsTableViewGenericDataSource<OperationCell>?
+
+    fileprivate func setupTableView() {
+        let bundle = Bundle(for: OperationCell.self)
+        let nib = UINib(nibName: operationCellIdentifier, bundle: bundle)
+        operationsTableView.register(nib, forCellReuseIdentifier: operationCellIdentifier)
+        operationsTableView.estimatedRowHeight = 80.0
+    }
+
+    fileprivate func display(operations: [Operation]) {
+        operationsTableView.dataSource = GenericTableViewDataSource<OperationCell>(with: operations, cellIdentifier: operationCellIdentifier)
+        operationsTableView.reloadData()
     }
 
     // MARK: Operations and amount
@@ -66,5 +85,6 @@ class HistoryViewController: UIViewController {
 extension HistoryViewController: HistoryDisplayLogic {
     func displayList(viewModel: History.List.ViewModel) {
         historyButton.setTitle(viewModel.amount, for: .normal)
+        display(operations: viewModel.operations)
     }
 }

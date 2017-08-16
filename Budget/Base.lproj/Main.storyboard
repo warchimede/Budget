@@ -109,9 +109,10 @@
                                             <action selector="onHistoryButtonTapped:" destination="EBW-rJ-yA4" eventType="touchUpInside" id="KMF-2s-qMR"/>
                                         </connections>
                                     </button>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vxZ-v5-KbG">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vxZ-v5-KbG">
                                         <rect key="frame" x="0.0" y="80" width="375" height="517"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <sections/>
                                     </tableView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BLV-GB-UhH" customClass="GADBannerView">
                                         <rect key="frame" x="0.0" y="597" width="375" height="50"/>
@@ -140,6 +141,7 @@
                     </view>
                     <connections>
                         <outlet property="historyButton" destination="QQc-8K-6RZ" id="sOO-KV-HyD"/>
+                        <outlet property="operationsTableView" destination="vxZ-v5-KbG" id="jJ7-In-Mau"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zvt-rz-ERX" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -59,8 +59,7 @@ class HistoryViewController: UIViewController {
     @IBOutlet weak var operationsTableView: UITableView!
 
     let operationCellIdentifier = "OperationCell"
-
-//    var operationsTableViewGenericDataSource<OperationCell>?
+    var operationsTableViewDataSource: GenericTableViewDataSource<OperationCell>?
 
     fileprivate func setupTableView() {
         let bundle = Bundle(for: OperationCell.self)
@@ -70,7 +69,8 @@ class HistoryViewController: UIViewController {
     }
 
     fileprivate func display(operations: [Operation]) {
-        operationsTableView.dataSource = GenericTableViewDataSource<OperationCell>(with: operations, cellIdentifier: operationCellIdentifier)
+        operationsTableViewDataSource = GenericTableViewDataSource<OperationCell>(with: operations, cellIdentifier: operationCellIdentifier)
+        operationsTableView.dataSource = operationsTableViewDataSource
         operationsTableView.reloadData()
     }
 

@@ -246,8 +246,7 @@
 				5CBEEC3B1F2CF6A800CDB0E7 /* CreateOperationPresenter.swift */,
 				5CBEEC3D1F2CF6A800CDB0E7 /* CreateOperationViewController.swift */,
 			);
-			name = "Create Operation";
-			path = "Operation Model";
+			path = "Create Operation";
 			sourceTree = "<group>";
 		};
 		5CC31B041F40CCDD00AD2544 /* Extensions */ = {

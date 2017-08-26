@@ -12,30 +12,29 @@
 
 import UIKit
 
-protocol CreateOperationBusinessLogic
-{
-  func doSomething(request: CreateOperation.Something.Request)
+protocol CreateOperationBusinessLogic {
+    func createOperation(request: CreateOperation.Creation.Request)
 }
 
-protocol CreateOperationDataStore
-{
-  //var name: String { get set }
-}
+class CreateOperationInteractor: CreateOperationBusinessLogic {
+    var presenter: CreateOperationPresentationLogic?
+    var worker: OperationsWorker?
 
-class CreateOperationInteractor: CreateOperationBusinessLogic, CreateOperationDataStore
-{
-  var presenter: CreateOperationPresentationLogic?
-  var worker: CreateOperationWorker?
-  //var name: String = ""
-  
-  // MARK: Do something
-  
-  func doSomething(request: CreateOperation.Something.Request)
-  {
-    worker = CreateOperationWorker()
-    worker?.doSomeWork()
-    
-    let response = CreateOperation.Something.Response()
-    presenter?.presentSomething(response: response)
-  }
+
+    // MARK: Create operation
+
+    func createOperation(request: CreateOperation.Creation.Request) {
+        guard let title = request.title,
+            let amount = Decimal(string: request.amount).flatMap({ request.isWithdrawal ? -$0 : $0 })
+        else {
+            presenter?.presentCreationDone()
+            return
+        }
+
+        let operation = Operation(amount: amount, date: Date(), title: title)
+        worker = OperationsWorker(operationsStore: OperationsCoreDataStore())
+        worker?.create(operation) { [weak self] _ in
+            self?.presenter?.presentCreationDone()
+        }
+    }
 }

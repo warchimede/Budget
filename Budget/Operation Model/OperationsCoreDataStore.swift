@@ -96,7 +96,31 @@ extension OperationsCoreDataStore: OperationsStoreProtocol {
                 }
             } catch {
                 DispatchQueue.main.async {
-                    completion(OperationsStoreError.cannotCreate("Cannot create this operation."))
+                    completion(.cannotCreate("Cannot create this operation."))
+                }
+            }
+        }
+    }
+
+    func delete(_ operation: Operation, completion: @escaping (OperationsStoreError?) -> Void) {
+        persistentContainer.performBackgroundTask { context in
+            do {
+                let request = NSFetchRequest<ManagedOperation>(entityName: "Operation")
+                // FIXME: FIX PREDICATE
+                print("FIX PREDICATE")
+                request.predicate = NSPredicate(format: "amount == %d AND date == %@ AND title == %@", [operation.amount, operation.date, operation.title])
+                let result = try context.fetch(request)
+                if let managedOperation = result.first {
+                    context.delete(managedOperation)
+                    try context.save()
+                }
+
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(.cannotDelete("Cannot delete this operation."))
                 }
             }
         }

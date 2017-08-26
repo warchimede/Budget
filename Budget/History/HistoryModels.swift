@@ -27,4 +27,12 @@ enum History {
             let operations: [Operation]
         }
     }
+
+    enum Deletion {
+        struct Request {
+            let operation: Operation
+        }
+
+        // List models are used for the Response and ViewModel
+    }
 }

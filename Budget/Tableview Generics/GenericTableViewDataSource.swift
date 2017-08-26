@@ -31,10 +31,17 @@ class GenericTableViewDataSource<Cell: UITableViewCell>: NSObject, UITableViewDa
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! Cell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? Cell else {
+            return UITableViewCell()
+        }
+
         let model = models[indexPath.row]
         cell.prepareCell(with: model)
 
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
     }
 }

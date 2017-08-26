@@ -14,6 +14,7 @@ import UIKit
 
 protocol HistoryBusinessLogic {
     func getList(request: History.List.Request)
+    func deleteOperation(request: History.Deletion.Request)
 }
 
 class HistoryInteractor: HistoryBusinessLogic {
@@ -22,11 +23,28 @@ class HistoryInteractor: HistoryBusinessLogic {
 
     // MARK: Get list and compute amount
 
-    func getList(request: History.List.Request) {
+    fileprivate func fetchAll() {
         operationsWorker.fetchAll { [weak self] operations in
             let amount = operations.total()
             let response = History.List.Response(amount: amount, operations: operations)
             self?.presenter?.presentList(response: response)
+        }
+    }
+
+    func getList(request: History.List.Request) {
+        fetchAll()
+    }
+
+    // MARK: Delete operation and update list
+
+    func deleteOperation(request: History.Deletion.Request) {
+        operationsWorker.delete(request.operation) { [weak self] error in
+            // Not really handling errors for now
+            if error != nil {
+                return
+            }
+
+            self?.fetchAll()
         }
     }
 }

@@ -46,8 +46,8 @@ class HistoryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        getList()
         setupTableView()
+        getList()
     }
 
     @IBOutlet weak var historyButton: UIButton!
@@ -71,14 +71,43 @@ class HistoryViewController: UIViewController {
     fileprivate func display(operations: [Operation]) {
         operationsTableViewDataSource = GenericTableViewDataSource<OperationCell>(with: operations, cellIdentifier: operationCellIdentifier)
         operationsTableView.dataSource = operationsTableViewDataSource
+        operationsTableView.delegate = self
         operationsTableView.reloadData()
     }
 
     // MARK: Operations and amount
 
-    func getList() {
+    fileprivate func getList() {
         let request = History.List.Request()
         interactor?.getList(request: request)
+    }
+
+    // MARK: Deletion
+
+    fileprivate func deleteOperation(atIndex index: Int) {
+        guard let operation = operationsTableViewDataSource?.models[index] else {
+            return
+        }
+
+        let request = History.Deletion.Request(operation: operation)
+        interactor?.deleteOperation(request: request)
+    }
+
+    fileprivate func deleteRowAction() -> UITableViewRowAction {
+        return UITableViewRowAction(style: .destructive, title: "Delete") { action, indexPath in
+            self.deleteOperation(atIndex: indexPath.row)
+        }
+    }
+}
+
+extension HistoryViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+
+        return [deleteRowAction()]
+    }
+
+    func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        return false
     }
 }
 

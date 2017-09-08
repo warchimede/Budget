@@ -106,9 +106,7 @@ extension OperationsCoreDataStore: OperationsStoreProtocol {
         persistentContainer.performBackgroundTask { context in
             do {
                 let request = NSFetchRequest<ManagedOperation>(entityName: "Operation")
-                // FIXME: FIX PREDICATE
-                print("FIX PREDICATE")
-                request.predicate = NSPredicate(format: "amount == %d AND date == %@ AND title == %@", [operation.amount, operation.date, operation.title])
+                request.predicate = NSPredicate(format: "amount == %@ AND date == %@ AND title == %@", operation.amount as NSNumber, operation.date as CVarArg, operation.title)
                 let result = try context.fetch(request)
                 if let managedOperation = result.first {
                     context.delete(managedOperation)

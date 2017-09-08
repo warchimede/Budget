@@ -14,6 +14,7 @@ import UIKit
 
 protocol HistoryDisplayLogic: class {
     func displayList(viewModel: History.List.ViewModel)
+    func displayDeletion(viewModel: History.Deletion.ViewModel)
 }
 
 class HistoryViewController: UIViewController {
@@ -94,7 +95,7 @@ class HistoryViewController: UIViewController {
     }
 
     fileprivate func deleteRowAction() -> UITableViewRowAction {
-        return UITableViewRowAction(style: .destructive, title: "Delete") { action, indexPath in
+        return UITableViewRowAction(style: .destructive, title: "X") { action, indexPath in
             self.deleteOperation(atIndex: indexPath.row)
         }
     }
@@ -115,5 +116,23 @@ extension HistoryViewController: HistoryDisplayLogic {
     func displayList(viewModel: History.List.ViewModel) {
         historyButton.setTitle(viewModel.amount, for: .normal)
         display(operations: viewModel.operations)
+    }
+
+    func displayDeletion(viewModel: History.Deletion.ViewModel) {
+        let idx = operationsTableViewDataSource?.models.index {
+            $0 == viewModel.operation
+        }
+
+        guard let index = idx else {
+            return
+        }
+
+        historyButton.setTitle(viewModel.amount, for: .normal)
+
+        let indexPath = IndexPath(row: index, section: 0)
+        operationsTableView.beginUpdates()
+        operationsTableViewDataSource?.models.remove(at: index)
+        operationsTableView.deleteRows(at: [indexPath], with: .automatic)
+        operationsTableView.endUpdates()
     }
 }

@@ -44,7 +44,11 @@ class HistoryInteractor: HistoryBusinessLogic {
                 return
             }
 
-            self?.fetchAll()
+            self?.operationsWorker.fetchAll { [weak self] operations in
+                let amount = operations.total()
+                let response = History.Deletion.Response(amount: amount, operation: request.operation)
+                self?.presenter?.presentDeletion(response: response)
+            }
         }
     }
 }

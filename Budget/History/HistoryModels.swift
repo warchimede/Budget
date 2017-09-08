@@ -32,7 +32,13 @@ enum History {
         struct Request {
             let operation: Operation
         }
-
-        // List models are used for the Response and ViewModel
+        struct Response {
+            let amount: Decimal
+            let operation: Operation
+        }
+        struct ViewModel {
+            let amount: String
+            let operation: Operation
+        }
     }
 }

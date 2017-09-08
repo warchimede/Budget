@@ -14,6 +14,7 @@ import UIKit
 
 protocol HistoryPresentationLogic {
     func presentList(response: History.List.Response)
+    func presentDeletion(response: History.Deletion.Response)
 }
 
 class HistoryPresenter: HistoryPresentationLogic {
@@ -24,5 +25,10 @@ class HistoryPresenter: HistoryPresentationLogic {
     func presentList(response: History.List.Response) {
         let viewModel = History.List.ViewModel(amount: "\(response.amount)", operations: response.operations)
         viewController?.displayList(viewModel: viewModel)
+    }
+
+    func presentDeletion(response: History.Deletion.Response) {
+        let viewModel = History.Deletion.ViewModel(amount: "\(response.amount)", operation: response.operation)
+        viewController?.displayDeletion(viewModel: viewModel)
     }
 }

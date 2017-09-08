@@ -10,7 +10,7 @@ import UIKit
 
 // Thanks Rajiv
 class GenericTableViewDataSource<Cell: UITableViewCell>: NSObject, UITableViewDataSource where Cell: ModelDisplayable {
-    let models: [Cell.Model]
+    var models: [Cell.Model]
     let cellIdentifier: String
 
     init(with models: [Cell.Model], cellIdentifier: String) {
@@ -21,10 +21,6 @@ class GenericTableViewDataSource<Cell: UITableViewCell>: NSObject, UITableViewDa
     }
 
     // MARK: UITableViewDataSource
-
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return models.count

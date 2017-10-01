@@ -49,6 +49,12 @@ class BalanceViewController: UIViewController {
         getAmount()
     }
 
+    // MARK: Navigation
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        segue.destination.view.backgroundColor = view.backgroundColor
+    }
+
     // MARK: Display balance amount
 
     @IBOutlet weak var balanceButton: UIButton!

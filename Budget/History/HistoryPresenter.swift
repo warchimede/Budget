@@ -23,12 +23,14 @@ class HistoryPresenter: HistoryPresentationLogic {
     // MARK: Present list of operations and amount
 
     func presentList(response: History.List.Response) {
-        let viewModel = History.List.ViewModel(amount: "\(response.amount)", operations: response.operations)
+        let amountColor = UIColor.color(for: response.amount)
+        let viewModel = History.List.ViewModel(amountColor: amountColor, formattedAmount: "\(response.amount)", operations: response.operations)
         viewController?.displayList(viewModel: viewModel)
     }
 
     func presentDeletion(response: History.Deletion.Response) {
-        let viewModel = History.Deletion.ViewModel(amount: "\(response.amount)", operation: response.operation)
+        let amountColor = UIColor.color(for: response.amount)
+        let viewModel = History.Deletion.ViewModel(amountColor: amountColor, formattedAmount: "\(response.amount)", operation: response.operation)
         viewController?.displayDeletion(viewModel: viewModel)
     }
 }

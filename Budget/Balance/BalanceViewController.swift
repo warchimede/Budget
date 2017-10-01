@@ -61,6 +61,7 @@ class BalanceViewController: UIViewController {
 
 extension BalanceViewController: BalanceDisplayLogic {
     func displayAmount(viewModel: Balance.Amount.ViewModel) {
-        balanceButton.setTitle(viewModel.amount, for: .normal)
+        balanceButton.setTitle(viewModel.formattedAmount, for: .normal)
+        view.backgroundColor = viewModel.amountColor
     }
 }

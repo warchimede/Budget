@@ -39,6 +39,7 @@
 		5C61F87B1F1691A4003F3AD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C61F87A1F1691A4003F3AD9 /* Assets.xcassets */; };
 		5C61F87E1F1691A4003F3AD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C61F87C1F1691A4003F3AD9 /* LaunchScreen.storyboard */; };
 		5C61F8941F1691A4003F3AD9 /* BudgetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C61F8931F1691A4003F3AD9 /* BudgetUITests.swift */; };
+		5CB0B97C1F66E686009B00F8 /* Color+Amount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB0B97B1F66E686009B00F8 /* Color+Amount.swift */; };
 		5CBEEC251F2CD42000CDB0E7 /* OperationsCoreDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBEEC241F2CD42000CDB0E7 /* OperationsCoreDataStoreTests.swift */; };
 		5CBEEC3F1F2CF6A800CDB0E7 /* CreateOperationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBEEC391F2CF6A800CDB0E7 /* CreateOperationInteractor.swift */; };
 		5CBEEC401F2CF6A800CDB0E7 /* CreateOperationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBEEC3A1F2CF6A800CDB0E7 /* CreateOperationModels.swift */; };
@@ -101,6 +102,7 @@
 		5C61F88F1F1691A4003F3AD9 /* BudgetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BudgetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C61F8931F1691A4003F3AD9 /* BudgetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetUITests.swift; sourceTree = "<group>"; };
 		5C61F8951F1691A4003F3AD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5CB0B97B1F66E686009B00F8 /* Color+Amount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Amount.swift"; sourceTree = "<group>"; };
 		5CBEEC241F2CD42000CDB0E7 /* OperationsCoreDataStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationsCoreDataStoreTests.swift; sourceTree = "<group>"; };
 		5CBEEC391F2CF6A800CDB0E7 /* CreateOperationInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateOperationInteractor.swift; sourceTree = "<group>"; };
 		5CBEEC3A1F2CF6A800CDB0E7 /* CreateOperationModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateOperationModels.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				5CC31B051F40CD0B00AD2544 /* Array+Operation.swift */,
+				5CB0B97B1F66E686009B00F8 /* Color+Amount.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -601,6 +604,7 @@
 				5CBEEC411F2CF6A800CDB0E7 /* CreateOperationPresenter.swift in Sources */,
 				5C44610C1F4488B900EC7DD5 /* OperationCell.swift in Sources */,
 				5C4461081F44838100EC7DD5 /* GenericTableViewDataSource.swift in Sources */,
+				5CB0B97C1F66E686009B00F8 /* Color+Amount.swift in Sources */,
 				5C3CED1C1F2A80CF00DB145D /* Operation.swift in Sources */,
 				5C60F1371F20EFDE006B1DB5 /* BalancePresenter.swift in Sources */,
 				5C3CED191F2A80B000DB145D /* ManagedOperation.swift in Sources */,

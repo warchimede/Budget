@@ -19,5 +19,7 @@ class OperationCell: UITableViewCell, ModelDisplayable {
         titleLabel.text = model.title
         dateLabel.text = "\(model.date)"
         amountLabel.text = "\(model.amount)"
+
+        backgroundColor = UIColor.color(for: model.amount)
     }
 }

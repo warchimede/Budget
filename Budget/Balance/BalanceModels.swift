@@ -22,7 +22,8 @@ enum Balance {
             let amount: Decimal
         }
         struct ViewModel {
-            let amount: String
+            let amountColor: UIColor
+            let formattedAmount: String
         }
     }
 }

@@ -95,7 +95,7 @@ class HistoryViewController: UIViewController {
     }
 
     fileprivate func deleteRowAction() -> UITableViewRowAction {
-        return UITableViewRowAction(style: .destructive, title: "X") { action, indexPath in
+        return UITableViewRowAction(style: .destructive, title: "\u{2715}" /* Cross */) { action, indexPath in
             self.deleteOperation(atIndex: indexPath.row)
         }
     }
@@ -114,7 +114,8 @@ extension HistoryViewController: UITableViewDelegate {
 
 extension HistoryViewController: HistoryDisplayLogic {
     func displayList(viewModel: History.List.ViewModel) {
-        historyButton.setTitle(viewModel.amount, for: .normal)
+        historyButton.setTitle(viewModel.formattedAmount, for: .normal)
+        view.backgroundColor = viewModel.amountColor
         display(operations: viewModel.operations)
     }
 
@@ -127,8 +128,9 @@ extension HistoryViewController: HistoryDisplayLogic {
             return
         }
 
-        historyButton.setTitle(viewModel.amount, for: .normal)
-
+        historyButton.setTitle(viewModel.formattedAmount, for: .normal)
+        view.backgroundColor = viewModel.amountColor
+        
         let indexPath = IndexPath(row: index, section: 0)
         operationsTableView.beginUpdates()
         operationsTableViewDataSource?.models.remove(at: index)

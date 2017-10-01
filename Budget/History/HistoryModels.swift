@@ -23,7 +23,8 @@ enum History {
             let operations: [Operation]
         }
         struct ViewModel {
-            let amount: String
+            let amountColor: UIColor
+            let formattedAmount: String
             let operations: [Operation]
         }
     }
@@ -37,7 +38,8 @@ enum History {
             let operation: Operation
         }
         struct ViewModel {
-            let amount: String
+            let amountColor: UIColor
+            let formattedAmount: String
             let operation: Operation
         }
     }

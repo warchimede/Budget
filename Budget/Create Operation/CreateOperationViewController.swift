@@ -19,6 +19,11 @@ protocol CreateOperationDisplayLogic: class {
 class CreateOperationViewController: UIViewController {
     var interactor: CreateOperationBusinessLogic?
 
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var amountTextField: UITextField!
+    @IBOutlet weak var signButton: UIButton!
+    @IBOutlet weak var amountOkButton: UIButton!
+
     // MARK: Object lifecycle
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -29,6 +34,13 @@ class CreateOperationViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        nameTextField.delegate = self
+        amountTextField.delegate = self
     }
 
     // MARK: Setup
@@ -52,5 +64,13 @@ class CreateOperationViewController: UIViewController {
 extension CreateOperationViewController: CreateOperationDisplayLogic {
     func displayCreationDone() {
         navigationController?.popViewController(animated: true)
+    }
+}
+
+extension CreateOperationViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == amountTextField {
+            amountOkButton.isHidden = false
+        }
     }
 }

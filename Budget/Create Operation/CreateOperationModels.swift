@@ -19,7 +19,7 @@ enum CreateOperation {
         struct Request {
             let title: String?
             let amount: String
-            let isWithdrawal: Bool
+            let isDeposit: Bool
         }
     }
 }

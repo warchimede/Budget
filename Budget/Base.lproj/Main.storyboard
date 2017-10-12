@@ -167,7 +167,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="134.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Transaction name" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="Z6x-fv-3cn">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Transaction title" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="Z6x-fv-3cn">
                                         <rect key="frame" x="0.0" y="134.5" width="375" height="134"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -187,6 +187,9 @@
                                                 <state key="normal" title="+">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="onSignButtonTapped:" destination="BBB-7e-9Oc" eventType="touchUpInside" id="zCv-qE-kun"/>
+                                                </connections>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="10" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="ygl-Fl-n0A">
                                                 <rect key="frame" x="80" y="0.0" width="215" height="134.5"/>
@@ -195,16 +198,29 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iqW-D1-LyX">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y6d-Qb-YmI">
                                                 <rect key="frame" x="295" y="0.0" width="80" height="134.5"/>
+                                                <subviews>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iqW-D1-LyX">
+                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="134.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <state key="normal" title="ok">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="onAmountOkButtonTapped:" destination="BBB-7e-9Oc" eventType="touchUpInside" id="GNl-fW-4Mb"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="80" id="09E-M7-7wi"/>
+                                                    <constraint firstAttribute="width" constant="80" id="VZg-UX-kc9"/>
+                                                    <constraint firstItem="iqW-D1-LyX" firstAttribute="leading" secondItem="Y6d-Qb-YmI" secondAttribute="leading" id="Wot-KB-7zD"/>
+                                                    <constraint firstAttribute="bottom" secondItem="iqW-D1-LyX" secondAttribute="bottom" id="Y8U-ww-zMh"/>
+                                                    <constraint firstItem="iqW-D1-LyX" firstAttribute="top" secondItem="Y6d-Qb-YmI" secondAttribute="top" id="Z7y-mZ-gmN"/>
+                                                    <constraint firstAttribute="trailing" secondItem="iqW-D1-LyX" secondAttribute="trailing" id="gce-FA-gCv"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                <state key="normal" title="ok">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                            </button>
+                                            </view>
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="szn-Va-78Z">
@@ -257,8 +273,8 @@
                     <connections>
                         <outlet property="amountOkButton" destination="iqW-D1-LyX" id="VAK-Qo-VAU"/>
                         <outlet property="amountTextField" destination="ygl-Fl-n0A" id="wRp-Sq-JcB"/>
-                        <outlet property="nameTextField" destination="Z6x-fv-3cn" id="MQL-8x-Bau"/>
                         <outlet property="signButton" destination="250-dz-4df" id="5lc-Fs-SGh"/>
+                        <outlet property="titleTextField" destination="Z6x-fv-3cn" id="cBk-Bx-hlo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kkh-yN-xyd" userLabel="First Responder" sceneMemberID="firstResponder"/>

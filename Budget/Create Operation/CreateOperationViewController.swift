@@ -19,10 +19,13 @@ protocol CreateOperationDisplayLogic: class {
 class CreateOperationViewController: UIViewController {
     var interactor: CreateOperationBusinessLogic?
 
-    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var amountTextField: UITextField!
     @IBOutlet weak var signButton: UIButton!
     @IBOutlet weak var amountOkButton: UIButton!
+
+    private var isDeposit = true
+    private let defaultAmount = 10
 
     // MARK: Object lifecycle
 
@@ -39,7 +42,8 @@ class CreateOperationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        nameTextField.delegate = self
+        titleTextField.delegate = self
+        amountTextField.placeholder = "\(defaultAmount)"
         amountTextField.delegate = self
     }
 
@@ -53,10 +57,22 @@ class CreateOperationViewController: UIViewController {
         presenter.viewController = self
     }
 
+    @IBAction func onAmountOkButtonTapped(_ sender: Any) {
+        amountTextField.resignFirstResponder()
+        amountOkButton.isHidden = true
+    }
+
+    @IBAction func onSignButtonTapped(_ sender: Any) {
+        isDeposit = !isDeposit
+        let title = isDeposit ? "+" : "-"
+        signButton.setTitle(title, for: .normal)
+    }
+
     // MARK: Create operation
 
     @IBAction func createOperation(_ sender: Any) {
-        let request = CreateOperation.Creation.Request(title: "test", amount: "10", isWithdrawal: true)
+        let title = titleTextField.text
+        let request = CreateOperation.Creation.Request(title: title, amount: amountTextField.text ?? "\(defaultAmount)", isDeposit: isDeposit)
         interactor?.createOperation(request: request)
     }
 }
@@ -69,8 +85,11 @@ extension CreateOperationViewController: CreateOperationDisplayLogic {
 
 extension CreateOperationViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        if textField == amountTextField {
-            amountOkButton.isHidden = false
-        }
+        amountOkButton.isHidden = textField != amountTextField
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

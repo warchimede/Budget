@@ -25,7 +25,7 @@ class CreateOperationInteractor: CreateOperationBusinessLogic {
 
     func createOperation(request: CreateOperation.Creation.Request) {
         guard let title = request.title,
-            let amount = Decimal(string: request.amount).flatMap({ request.isWithdrawal ? -$0 : $0 })
+            let amount = Decimal(string: request.amount).flatMap({ request.isDeposit ? $0 : -$0 })
         else {
             presenter?.presentCreationDone()
             return

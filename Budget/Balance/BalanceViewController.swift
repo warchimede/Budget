@@ -44,6 +44,11 @@ class BalanceViewController: UIViewController {
 
     // MARK: View lifecycle
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationController?.delegate = self
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getAmount()
@@ -69,5 +74,11 @@ extension BalanceViewController: BalanceDisplayLogic {
     func displayAmount(viewModel: Balance.Amount.ViewModel) {
         balanceButton.setTitle(viewModel.formattedAmount, for: .normal)
         view.backgroundColor = viewModel.amountColor
+    }
+}
+
+extension BalanceViewController: UINavigationControllerDelegate {
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return PushDownAnimator()
     }
 }

@@ -19,6 +19,9 @@ protocol BalanceDisplayLogic: class {
 class BalanceViewController: UIViewController {
     var interactor: BalanceBusinessLogic?
 
+    // TODO: Should move it somewhere else
+    fileprivate let navigationControllerDelegate = NavigationControllerDelegate()
+
     // MARK: Object lifecycle
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -46,7 +49,8 @@ class BalanceViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.delegate = self
+
+        navigationController?.delegate = navigationControllerDelegate
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -74,11 +78,5 @@ extension BalanceViewController: BalanceDisplayLogic {
     func displayAmount(viewModel: Balance.Amount.ViewModel) {
         balanceButton.setTitle(viewModel.formattedAmount, for: .normal)
         view.backgroundColor = viewModel.amountColor
-    }
-}
-
-extension BalanceViewController: UINavigationControllerDelegate {
-    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return PushDownAnimator()
     }
 }

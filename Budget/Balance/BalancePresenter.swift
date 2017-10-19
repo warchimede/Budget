@@ -23,7 +23,8 @@ class BalancePresenter: BalancePresentationLogic {
 
     func presentAmount(response: Balance.Amount.Response) {
         let amountColor = UIColor.color(for: response.amount)
-        let viewModel = Balance.Amount.ViewModel(amountColor: amountColor, formattedAmount: "\(response.amount)")
+        let formattedAmount = NumberFormatter.formatToCurrency(with: response.amount) ?? "\(response.amount)"
+        let viewModel = Balance.Amount.ViewModel(amountColor: amountColor, formattedAmount: formattedAmount)
         viewController?.displayAmount(viewModel: viewModel)
     }
 }

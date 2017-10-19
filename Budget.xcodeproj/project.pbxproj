@@ -39,6 +39,7 @@
 		5C61F87B1F1691A4003F3AD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C61F87A1F1691A4003F3AD9 /* Assets.xcassets */; };
 		5C61F87E1F1691A4003F3AD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C61F87C1F1691A4003F3AD9 /* LaunchScreen.storyboard */; };
 		5C61F8941F1691A4003F3AD9 /* BudgetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C61F8931F1691A4003F3AD9 /* BudgetUITests.swift */; };
+		5C6ECDB61F98D3D8001AF1B7 /* NumberFormatter+Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6ECDB51F98D3D8001AF1B7 /* NumberFormatter+Currency.swift */; };
 		5C7CA5C21F965E04008192BF /* NavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7CA5C11F965E04008192BF /* NavigationControllerDelegate.swift */; };
 		5C7CA5C41F96627D008192BF /* PushUpAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7CA5C31F96627D008192BF /* PushUpAnimator.swift */; };
 		5C88E5691F94FF630020E263 /* PushDownAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C88E5681F94FF630020E263 /* PushDownAnimator.swift */; };
@@ -105,6 +106,7 @@
 		5C61F88F1F1691A4003F3AD9 /* BudgetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BudgetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C61F8931F1691A4003F3AD9 /* BudgetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetUITests.swift; sourceTree = "<group>"; };
 		5C61F8951F1691A4003F3AD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C6ECDB51F98D3D8001AF1B7 /* NumberFormatter+Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Currency.swift"; sourceTree = "<group>"; };
 		5C7CA5C11F965E04008192BF /* NavigationControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerDelegate.swift; sourceTree = "<group>"; };
 		5C7CA5C31F96627D008192BF /* PushUpAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushUpAnimator.swift; sourceTree = "<group>"; };
 		5C88E5681F94FF630020E263 /* PushDownAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushDownAnimator.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 			children = (
 				5CC31B051F40CD0B00AD2544 /* Array+Operation.swift */,
 				5CB0B97B1F66E686009B00F8 /* Color+Amount.swift */,
+				5C6ECDB51F98D3D8001AF1B7 /* NumberFormatter+Currency.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -641,6 +644,7 @@
 				5CBEEC431F2CF6A800CDB0E7 /* CreateOperationViewController.swift in Sources */,
 				5CC31B1E1F40D67E00AD2544 /* HistoryViewController.swift in Sources */,
 				5CC31B061F40CD0B00AD2544 /* Array+Operation.swift in Sources */,
+				5C6ECDB61F98D3D8001AF1B7 /* NumberFormatter+Currency.swift in Sources */,
 				5CC31B1C1F40D67E00AD2544 /* HistoryPresenter.swift in Sources */,
 				5C3CED1E1F2A8A2F00DB145D /* OperationsWorker.swift in Sources */,
 				5C60F1361F20EFDE006B1DB5 /* BalanceModels.swift in Sources */,

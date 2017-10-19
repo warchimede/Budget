@@ -18,7 +18,7 @@ class OperationCell: UITableViewCell, ModelDisplayable {
     func prepareCell(with model: Operation) {
         titleLabel.text = model.title
         dateLabel.text = "\(model.date)"
-        amountLabel.text = "\(model.amount)"
+        amountLabel.text = NumberFormatter.formatToCurrency(with: model.amount) ?? "\(model.amount)"
 
         backgroundColor = UIColor.color(for: model.amount)
     }

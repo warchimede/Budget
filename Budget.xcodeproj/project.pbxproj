@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		5C0EB5091F9F549C0089C4A1 /* DateFormatter+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0EB5081F9F549C0089C4A1 /* DateFormatter+Cache.swift */; };
 		5C3CED191F2A80B000DB145D /* ManagedOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3CED171F2A80B000DB145D /* ManagedOperation.swift */; };
 		5C3CED1A1F2A80B000DB145D /* OperationsCoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3CED181F2A80B000DB145D /* OperationsCoreDataStore.swift */; };
 		5C3CED1C1F2A80CF00DB145D /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3CED1B1F2A80CF00DB145D /* Operation.swift */; };
@@ -82,6 +83,7 @@
 		24ACAD76286771F8FC745027 /* Pods-BudgetUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BudgetUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BudgetUITests/Pods-BudgetUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		250D050895FED8AA136DE3A0 /* Pods-Budget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Budget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Budget/Pods-Budget.debug.xcconfig"; sourceTree = "<group>"; };
 		2FD0DEBFBC285DB65500E4D2 /* Pods-BudgetTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BudgetTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BudgetTests/Pods-BudgetTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5C0EB5081F9F549C0089C4A1 /* DateFormatter+Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Cache.swift"; sourceTree = "<group>"; };
 		5C3CED171F2A80B000DB145D /* ManagedOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedOperation.swift; sourceTree = "<group>"; };
 		5C3CED181F2A80B000DB145D /* OperationsCoreDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationsCoreDataStore.swift; sourceTree = "<group>"; };
 		5C3CED1B1F2A80CF00DB145D /* Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 			children = (
 				5CC31B051F40CD0B00AD2544 /* Array+Operation.swift */,
 				5CB0B97B1F66E686009B00F8 /* Color+Amount.swift */,
+				5C0EB5081F9F549C0089C4A1 /* DateFormatter+Cache.swift */,
 				5C6ECDB51F98D3D8001AF1B7 /* NumberFormatter+Currency.swift */,
 			);
 			path = Extensions;
@@ -645,6 +648,7 @@
 				5CC31B1E1F40D67E00AD2544 /* HistoryViewController.swift in Sources */,
 				5CC31B061F40CD0B00AD2544 /* Array+Operation.swift in Sources */,
 				5C6ECDB61F98D3D8001AF1B7 /* NumberFormatter+Currency.swift in Sources */,
+				5C0EB5091F9F549C0089C4A1 /* DateFormatter+Cache.swift in Sources */,
 				5CC31B1C1F40D67E00AD2544 /* HistoryPresenter.swift in Sources */,
 				5C3CED1E1F2A8A2F00DB145D /* OperationsWorker.swift in Sources */,
 				5C60F1361F20EFDE006B1DB5 /* BalanceModels.swift in Sources */,

@@ -24,14 +24,14 @@ class HistoryPresenter: HistoryPresentationLogic {
 
     func presentList(response: History.List.Response) {
         let amountColor = UIColor.color(for: response.amount)
-        let formattedAmount = NumberFormatter.formatToCurrency(with: response.amount) ?? "\(response.amount)"
+        let formattedAmount = NumberFormatter.formattedString(from: response.amount) ?? "\(response.amount)"
         let viewModel = History.List.ViewModel(amountColor: amountColor, formattedAmount: formattedAmount, operations: response.operations)
         viewController?.displayList(viewModel: viewModel)
     }
 
     func presentDeletion(response: History.Deletion.Response) {
         let amountColor = UIColor.color(for: response.amount)
-        let formattedAmount = NumberFormatter.formatToCurrency(with: response.amount) ?? "\(response.amount)"
+        let formattedAmount = NumberFormatter.formattedString(from: response.amount) ?? "\(response.amount)"
         let viewModel = History.Deletion.ViewModel(amountColor: amountColor, formattedAmount: formattedAmount, operation: response.operation)
         viewController?.displayDeletion(viewModel: viewModel)
     }

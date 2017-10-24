@@ -16,7 +16,7 @@ extension NumberFormatter {
         return formatter
     } ()
 
-    static func formatToCurrency(with amount: Decimal) -> String? {
+    static func formattedString(from amount: Decimal) -> String? {
         return currencyFormatter.string(from: amount as NSNumber)
     }
 }

@@ -9,11 +9,14 @@
 import Foundation
 
 extension NumberFormatter {
-    static func formatToCurrency(with amount: Decimal) -> String? {
+    private static let currencyFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.locale = .current
         formatter.numberStyle = .currency
+        return formatter
+    } ()
 
-        return formatter.string(from: amount as NSNumber)
+    static func formatToCurrency(with amount: Decimal) -> String? {
+        return currencyFormatter.string(from: amount as NSNumber)
     }
 }

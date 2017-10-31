@@ -19,12 +19,12 @@ protocol HistoryBusinessLogic {
 
 class HistoryInteractor: HistoryBusinessLogic {
     var presenter: HistoryPresentationLogic?
-    var operationsWorker = OperationsWorker(operationsStore: OperationsCoreDataStore())
+    var operationWorker = OperationWorker(operationStore: OperationCoreDataStore())
 
     // MARK: Get list and compute amount
 
     fileprivate func fetchAll() {
-        operationsWorker.fetchAll { [weak self] operations in
+        operationWorker.fetchAll { [weak self] operations in
             let amount = operations.total()
             let response = History.List.Response(amount: amount, operations: operations)
             self?.presenter?.presentList(response: response)
@@ -38,13 +38,13 @@ class HistoryInteractor: HistoryBusinessLogic {
     // MARK: Delete operation and update list
 
     func deleteOperation(request: History.Deletion.Request) {
-        operationsWorker.delete(request.operation) { [weak self] error in
+        operationWorker.delete(request.operation) { [weak self] error in
             // Not really handling errors for now
             if error != nil {
                 return
             }
 
-            self?.operationsWorker.fetchAll { [weak self] operations in
+            self?.operationWorker.fetchAll { [weak self] operations in
                 let amount = operations.total()
                 let response = History.Deletion.Response(amount: amount, operation: request.operation)
                 self?.presenter?.presentDeletion(response: response)

@@ -28,7 +28,7 @@ class OperationsCoreDataStoreTests: XCTestCase {
         let persistentStoreDescription = NSPersistentStoreDescription()
         persistentStoreDescription.type = NSInMemoryStoreType
         container.persistentStoreDescriptions = [persistentStoreDescription]
-        let sut = OperationsCoreDataStore(persistentContainer: container)
+        let sut = OperationCoreDataStore(persistentContainer: container)
         let expect = expectation(description: "Empty array")
 
         // when

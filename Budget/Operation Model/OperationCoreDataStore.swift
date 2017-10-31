@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-class OperationsCoreDataStore {
+class OperationCoreDataStore {
 
     fileprivate var persistentContainer: NSPersistentContainer
 
@@ -51,7 +51,7 @@ class OperationsCoreDataStore {
         do {
             try save()
         } catch {
-            fatalError("Error deinitializing OperationsCoreDataStore")
+            fatalError("Error deinitializing OperationCoreDataStore")
         }
     }
 
@@ -64,9 +64,9 @@ class OperationsCoreDataStore {
 }
 
 // Performing background tasks gives this object responsibilty to come back on main queue.
-extension OperationsCoreDataStore: OperationsStoreProtocol {
+extension OperationCoreDataStore: OperationStoreProtocol {
 
-    func fetchAll(completion: @escaping ([Operation]?, OperationsStoreError?) -> Void) {
+    func fetchAll(completion: @escaping ([Operation]?, OperationStoreError?) -> Void) {
         persistentContainer.performBackgroundTask { context in
             do {
                 let request = NSFetchRequest<ManagedOperation>(entityName: "Operation")
@@ -85,7 +85,7 @@ extension OperationsCoreDataStore: OperationsStoreProtocol {
         }
     }
 
-    func create(_ operation: Operation, completion: @escaping (OperationsStoreError?) -> Void) {
+    func create(_ operation: Operation, completion: @escaping (OperationStoreError?) -> Void) {
         persistentContainer.performBackgroundTask { context in
             do {
                 let managedOperation = NSEntityDescription.insertNewObject(forEntityName: "Operation", into: context) as! ManagedOperation
@@ -102,7 +102,7 @@ extension OperationsCoreDataStore: OperationsStoreProtocol {
         }
     }
 
-    func delete(_ operation: Operation, completion: @escaping (OperationsStoreError?) -> Void) {
+    func delete(_ operation: Operation, completion: @escaping (OperationStoreError?) -> Void) {
         persistentContainer.performBackgroundTask { context in
             do {
                 let request = NSFetchRequest<ManagedOperation>(entityName: "Operation")

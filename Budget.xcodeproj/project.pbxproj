@@ -23,9 +23,9 @@
 /* Begin PBXBuildFile section */
 		5C0EB5091F9F549C0089C4A1 /* DateFormatter+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0EB5081F9F549C0089C4A1 /* DateFormatter+Cache.swift */; };
 		5C3CED191F2A80B000DB145D /* ManagedOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3CED171F2A80B000DB145D /* ManagedOperation.swift */; };
-		5C3CED1A1F2A80B000DB145D /* OperationsCoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3CED181F2A80B000DB145D /* OperationsCoreDataStore.swift */; };
+		5C3CED1A1F2A80B000DB145D /* OperationCoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3CED181F2A80B000DB145D /* OperationCoreDataStore.swift */; };
 		5C3CED1C1F2A80CF00DB145D /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3CED1B1F2A80CF00DB145D /* Operation.swift */; };
-		5C3CED1E1F2A8A2F00DB145D /* OperationsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3CED1D1F2A8A2F00DB145D /* OperationsWorker.swift */; };
+		5C3CED1E1F2A8A2F00DB145D /* OperationWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3CED1D1F2A8A2F00DB145D /* OperationWorker.swift */; };
 		5C4461061F44830300EC7DD5 /* ModelDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4461051F44830300EC7DD5 /* ModelDisplayable.swift */; };
 		5C4461081F44838100EC7DD5 /* GenericTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4461071F44838100EC7DD5 /* GenericTableViewDataSource.swift */; };
 		5C44610C1F4488B900EC7DD5 /* OperationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C44610B1F4488B900EC7DD5 /* OperationCell.swift */; };
@@ -85,9 +85,9 @@
 		2FD0DEBFBC285DB65500E4D2 /* Pods-BudgetTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BudgetTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BudgetTests/Pods-BudgetTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5C0EB5081F9F549C0089C4A1 /* DateFormatter+Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Cache.swift"; sourceTree = "<group>"; };
 		5C3CED171F2A80B000DB145D /* ManagedOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedOperation.swift; sourceTree = "<group>"; };
-		5C3CED181F2A80B000DB145D /* OperationsCoreDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationsCoreDataStore.swift; sourceTree = "<group>"; };
+		5C3CED181F2A80B000DB145D /* OperationCoreDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationCoreDataStore.swift; sourceTree = "<group>"; };
 		5C3CED1B1F2A80CF00DB145D /* Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
-		5C3CED1D1F2A8A2F00DB145D /* OperationsWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationsWorker.swift; sourceTree = "<group>"; };
+		5C3CED1D1F2A8A2F00DB145D /* OperationWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationWorker.swift; sourceTree = "<group>"; };
 		5C4461051F44830300EC7DD5 /* ModelDisplayable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelDisplayable.swift; sourceTree = "<group>"; };
 		5C4461071F44838100EC7DD5 /* GenericTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericTableViewDataSource.swift; sourceTree = "<group>"; };
 		5C44610B1F4488B900EC7DD5 /* OperationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationCell.swift; sourceTree = "<group>"; };
@@ -164,8 +164,8 @@
 			children = (
 				5C3CED171F2A80B000DB145D /* ManagedOperation.swift */,
 				5C3CED1B1F2A80CF00DB145D /* Operation.swift */,
-				5C3CED181F2A80B000DB145D /* OperationsCoreDataStore.swift */,
-				5C3CED1D1F2A8A2F00DB145D /* OperationsWorker.swift */,
+				5C3CED181F2A80B000DB145D /* OperationCoreDataStore.swift */,
+				5C3CED1D1F2A8A2F00DB145D /* OperationWorker.swift */,
 			);
 			path = "Operation Model";
 			sourceTree = "<group>";
@@ -640,7 +640,7 @@
 				5CC31B1B1F40D67E00AD2544 /* HistoryModels.swift in Sources */,
 				5C61F8791F1691A4003F3AD9 /* Budget.xcdatamodeld in Sources */,
 				5C4461061F44830300EC7DD5 /* ModelDisplayable.swift in Sources */,
-				5C3CED1A1F2A80B000DB145D /* OperationsCoreDataStore.swift in Sources */,
+				5C3CED1A1F2A80B000DB145D /* OperationCoreDataStore.swift in Sources */,
 				5C60F1391F20EFDE006B1DB5 /* BalanceViewController.swift in Sources */,
 				5C7CA5C41F96627D008192BF /* PushUpAnimator.swift in Sources */,
 				5C7CA5C21F965E04008192BF /* NavigationControllerDelegate.swift in Sources */,
@@ -650,7 +650,7 @@
 				5C6ECDB61F98D3D8001AF1B7 /* NumberFormatter+Currency.swift in Sources */,
 				5C0EB5091F9F549C0089C4A1 /* DateFormatter+Cache.swift in Sources */,
 				5CC31B1C1F40D67E00AD2544 /* HistoryPresenter.swift in Sources */,
-				5C3CED1E1F2A8A2F00DB145D /* OperationsWorker.swift in Sources */,
+				5C3CED1E1F2A8A2F00DB145D /* OperationWorker.swift in Sources */,
 				5C60F1361F20EFDE006B1DB5 /* BalanceModels.swift in Sources */,
 				5C60F1351F20EFDE006B1DB5 /* BalanceInteractor.swift in Sources */,
 				5CBEEC3F1F2CF6A800CDB0E7 /* CreateOperationInteractor.swift in Sources */,

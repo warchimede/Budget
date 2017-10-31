@@ -18,12 +18,12 @@ protocol BalanceBusinessLogic {
 
 class BalanceInteractor: BalanceBusinessLogic {
     var presenter: BalancePresentationLogic?
-    var operationsWorker = OperationsWorker(operationsStore: OperationsCoreDataStore())
+    var operationWorker = OperationWorker(operationStore: OperationCoreDataStore())
 
     // MARK: Compute balance amount
 
     func getAmount(request: Balance.Amount.Request) {
-        operationsWorker.fetchAll { [weak self] operations in
+        operationWorker.fetchAll { [weak self] operations in
             let amount = operations.total()
             let response = Balance.Amount.Response(amount: amount)
             self?.presenter?.presentAmount(response: response)

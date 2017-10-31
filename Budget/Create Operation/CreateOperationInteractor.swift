@@ -18,7 +18,7 @@ protocol CreateOperationBusinessLogic {
 
 class CreateOperationInteractor: CreateOperationBusinessLogic {
     var presenter: CreateOperationPresentationLogic?
-    var worker: OperationsWorker?
+    var operationWorker: OperationWorker?
 
 
     // MARK: Create operation
@@ -32,8 +32,8 @@ class CreateOperationInteractor: CreateOperationBusinessLogic {
         }
 
         let operation = Operation(amount: amount, date: Date(), title: title)
-        worker = OperationsWorker(operationsStore: OperationsCoreDataStore())
-        worker?.create(operation) { [weak self] _ in
+        operationWorker = OperationWorker(operationStore: OperationCoreDataStore())
+        operationWorker?.create(operation) { [weak self] _ in
             self?.presenter?.presentCreationDone()
         }
     }

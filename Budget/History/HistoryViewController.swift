@@ -52,6 +52,7 @@ class HistoryViewController: UIViewController {
     }
 
     @IBOutlet weak var historyButton: UIButton!
+    @IBOutlet weak var nothingLabel: UILabel!
 
     @IBAction func onHistoryButtonTapped(_ sender: Any) {
         navigationController?.popViewController(animated: true)
@@ -114,9 +115,19 @@ extension HistoryViewController: UITableViewDelegate {
 }
 
 extension HistoryViewController: HistoryDisplayLogic {
+
+    private func updateNothingLabel(with operations: [Operation]) {
+        nothingLabel.isHidden = !operations.isEmpty
+    }
+
+    private func updateHistoryButtonTitle(with title: String) {
+        historyButton.setTitle(title, for: .normal)
+    }
+
     func displayList(viewModel: History.List.ViewModel) {
-        historyButton.setTitle(viewModel.formattedAmount, for: .normal)
+        updateHistoryButtonTitle(with: viewModel.formattedAmount)
         view.backgroundColor = viewModel.amountColor
+        updateNothingLabel(with: viewModel.operations)
         display(operations: viewModel.operations)
     }
 
@@ -129,7 +140,7 @@ extension HistoryViewController: HistoryDisplayLogic {
             return
         }
 
-        historyButton.setTitle(viewModel.formattedAmount, for: .normal)
+        updateHistoryButtonTitle(with: viewModel.formattedAmount)
         view.backgroundColor = viewModel.amountColor
 
         let indexPath = IndexPath(row: index, section: 0)
@@ -137,5 +148,8 @@ extension HistoryViewController: HistoryDisplayLogic {
         operationsTableViewDataSource?.models.remove(at: index)
         operationsTableView.deleteRows(at: [indexPath], with: .automatic)
         operationsTableView.endUpdates()
+
+        let operations = operationsTableViewDataSource?.models ?? []
+        updateNothingLabel(with: operations)
     }
 }

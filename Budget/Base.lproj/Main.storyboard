@@ -109,11 +109,31 @@
                                             <action selector="onHistoryButtonTapped:" destination="EBW-rJ-yA4" eventType="touchUpInside" id="KMF-2s-qMR"/>
                                         </connections>
                                     </button>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vxZ-v5-KbG">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T2m-do-jW1">
                                         <rect key="frame" x="0.0" y="80" width="375" height="517"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nothing here, yet." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48S-i2-UTA">
+                                                <rect key="frame" x="73.5" y="240.5" width="227.5" height="36"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vxZ-v5-KbG">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="517"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <sections/>
+                                            </tableView>
+                                        </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        <sections/>
-                                    </tableView>
+                                        <constraints>
+                                            <constraint firstItem="vxZ-v5-KbG" firstAttribute="top" secondItem="T2m-do-jW1" secondAttribute="top" id="GLg-xm-cyR"/>
+                                            <constraint firstItem="48S-i2-UTA" firstAttribute="centerX" secondItem="T2m-do-jW1" secondAttribute="centerX" id="HC6-KL-5Bd"/>
+                                            <constraint firstItem="48S-i2-UTA" firstAttribute="centerY" secondItem="T2m-do-jW1" secondAttribute="centerY" id="JOv-mf-EbQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="vxZ-v5-KbG" secondAttribute="trailing" id="Ow7-vP-xp7"/>
+                                            <constraint firstAttribute="bottom" secondItem="vxZ-v5-KbG" secondAttribute="bottom" id="Q4G-ce-irB"/>
+                                            <constraint firstItem="vxZ-v5-KbG" firstAttribute="leading" secondItem="T2m-do-jW1" secondAttribute="leading" id="y93-Ie-b5c"/>
+                                        </constraints>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BLV-GB-UhH" customClass="GADBannerView">
                                         <rect key="frame" x="0.0" y="597" width="375" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -141,6 +161,7 @@
                     </view>
                     <connections>
                         <outlet property="historyButton" destination="QQc-8K-6RZ" id="sOO-KV-HyD"/>
+                        <outlet property="nothingLabel" destination="48S-i2-UTA" id="bjD-ls-pux"/>
                         <outlet property="operationsTableView" destination="vxZ-v5-KbG" id="jJ7-In-Mau"/>
                     </connections>
                 </viewController>

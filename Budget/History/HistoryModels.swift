@@ -12,6 +12,7 @@
 
 import UIKit
 
+// swiftlint:disable nesting
 enum History {
     // MARK: Use cases
 
@@ -44,3 +45,4 @@ enum History {
         }
     }
 }
+// swiftlint:enable nesting

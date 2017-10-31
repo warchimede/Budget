@@ -15,7 +15,7 @@ struct Operation {
 }
 
 extension Operation: Equatable {
-    static func ==(lhs: Operation, rhs: Operation) -> Bool {
+    static func ==(lhs: Operation, rhs: Operation) -> Bool { // swiftlint:disable:this operator_whitespace
         return lhs.amount == rhs.amount
             && lhs.date == rhs.date
             && lhs.title == rhs.title

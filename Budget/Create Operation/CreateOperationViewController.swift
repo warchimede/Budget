@@ -72,7 +72,8 @@ class CreateOperationViewController: UIViewController {
 
     @IBAction func createOperation(_ sender: Any) {
         let title = titleTextField.text
-        let request = CreateOperation.Creation.Request(title: title, amount: amountTextField.text ?? "\(defaultAmount)", isDeposit: isDeposit)
+        let request = CreateOperation.Creation.Request(title: title, amount: amountTextField.text ?? "\(defaultAmount)",
+                                                        isDeposit: isDeposit)
         interactor?.createOperation(request: request)
     }
 }

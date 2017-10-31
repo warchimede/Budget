@@ -32,7 +32,7 @@ class OperationsCoreDataStoreTests: XCTestCase {
         let expect = expectation(description: "Empty array")
 
         // when
-        sut.fetchAll() { operations, error in
+        sut.fetchAll { operations, error in
             // then
             XCTAssertNil(error)
             XCTAssertNotNil(operations)

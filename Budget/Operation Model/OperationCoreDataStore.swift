@@ -88,7 +88,11 @@ extension OperationCoreDataStore: OperationStoreProtocol {
     func create(_ operation: Operation, completion: @escaping (OperationStoreError?) -> Void) {
         persistentContainer.performBackgroundTask { context in
             do {
-                let managedOperation = NSEntityDescription.insertNewObject(forEntityName: "Operation", into: context) as! ManagedOperation
+                guard let managedOperation = NSEntityDescription.insertNewObject(forEntityName: "Operation",
+                                                                                 into: context) as? ManagedOperation
+                else {
+                    throw OperationStoreError.cannotCreate("Cannot create this operation.")
+                }
                 managedOperation.from(operation)
                 try context.save()
                 DispatchQueue.main.async {
@@ -106,7 +110,8 @@ extension OperationCoreDataStore: OperationStoreProtocol {
         persistentContainer.performBackgroundTask { context in
             do {
                 let request = NSFetchRequest<ManagedOperation>(entityName: "Operation")
-                request.predicate = NSPredicate(format: "amount == %@ AND date == %@ AND title == %@", operation.amount as NSNumber, operation.date as CVarArg, operation.title)
+                request.predicate = NSPredicate(format: "amount == %@ AND date == %@ AND title == %@",
+                                               operation.amount as NSNumber, operation.date as CVarArg, operation.title)
                 let result = try context.fetch(request)
                 if let managedOperation = result.first {
                     context.delete(managedOperation)

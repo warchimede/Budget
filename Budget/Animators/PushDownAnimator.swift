@@ -20,8 +20,10 @@ class PushDownAnimator: NSObject, UIViewControllerAnimatedTransitioning {
                 return
         }
         let containerFrame = transitionContext.containerView.frame
-        let fromVCFinalFrame = CGRect(x: containerFrame.minX, y: containerFrame.maxY, width: containerFrame.width, height: containerFrame.height)
-        toVC.view.frame = CGRect(x: containerFrame.minX, y: containerFrame.minY - containerFrame.height, width: containerFrame.width, height: containerFrame.height)
+        let fromVCFinalFrame = CGRect(x: containerFrame.minX, y: containerFrame.maxY,
+                                      width: containerFrame.width, height: containerFrame.height)
+        toVC.view.frame = CGRect(x: containerFrame.minX, y: containerFrame.minY - containerFrame.height,
+                                 width: containerFrame.width, height: containerFrame.height)
         transitionContext.containerView.addSubview(toVC.view)
 
         let animations = {
@@ -30,7 +32,8 @@ class PushDownAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         }
 
         let transitionDuration = self.transitionDuration(using: transitionContext)
-        UIView.animate(withDuration: transitionDuration, delay: 0.0, options: .curveEaseInOut, animations: animations) { _ in
+        UIView.animate(withDuration: transitionDuration, delay: 0.0,
+                       options: .curveEaseInOut, animations: animations) { _ in
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
         }
     }

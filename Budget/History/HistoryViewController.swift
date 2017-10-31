@@ -70,7 +70,8 @@ class HistoryViewController: UIViewController {
     }
 
     fileprivate func display(operations: [Operation]) {
-        operationsTableViewDataSource = GenericTableViewDataSource<OperationCell>(with: operations, cellIdentifier: operationCellIdentifier)
+        operationsTableViewDataSource = GenericTableViewDataSource<OperationCell>(with: operations,
+                                                                              cellIdentifier: operationCellIdentifier)
         operationsTableView.dataSource = operationsTableViewDataSource
         operationsTableView.delegate = self
         operationsTableView.reloadData()
@@ -95,7 +96,7 @@ class HistoryViewController: UIViewController {
     }
 
     fileprivate func deleteRowAction() -> UITableViewRowAction {
-        return UITableViewRowAction(style: .destructive, title: "\u{2715}" /* Cross */) { action, indexPath in
+        return UITableViewRowAction(style: .destructive, title: "\u{2715}" /* Cross */) { _, indexPath in
             self.deleteOperation(atIndex: indexPath.row)
         }
     }
@@ -130,7 +131,7 @@ extension HistoryViewController: HistoryDisplayLogic {
 
         historyButton.setTitle(viewModel.formattedAmount, for: .normal)
         view.backgroundColor = viewModel.amountColor
-        
+
         let indexPath = IndexPath(row: index, section: 0)
         operationsTableView.beginUpdates()
         operationsTableViewDataSource?.models.remove(at: index)

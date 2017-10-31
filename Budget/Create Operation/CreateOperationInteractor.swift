@@ -20,7 +20,6 @@ class CreateOperationInteractor: CreateOperationBusinessLogic {
     var presenter: CreateOperationPresentationLogic?
     var operationWorker: OperationWorker?
 
-
     // MARK: Create operation
 
     func createOperation(request: CreateOperation.Creation.Request) {

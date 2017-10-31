@@ -12,6 +12,7 @@
 
 import UIKit
 
+// swiftlint:disable nesting
 enum CreateOperation {
     // MARK: Use cases
 
@@ -23,3 +24,4 @@ enum CreateOperation {
         }
     }
 }
+// swiftlint:enable nesting

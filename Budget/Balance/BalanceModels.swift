@@ -12,6 +12,7 @@
 
 import UIKit
 
+// swiftlint:disable nesting
 enum Balance {
     // MARK: Use cases
 
@@ -27,3 +28,4 @@ enum Balance {
         }
     }
 }
+// swiftlint:enable nesting

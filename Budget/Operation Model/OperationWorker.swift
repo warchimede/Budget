@@ -33,15 +33,3 @@ class OperationWorker {
         operationStore.delete(operation, completion: completion)
     }
 }
-
-protocol OperationStoreProtocol {
-    func fetchAll(completion: @escaping ([Operation]?, OperationStoreError?) -> Void)
-    func create(_ operation: Operation, completion: @escaping (OperationStoreError?) -> Void)
-    func delete(_ operation: Operation, completion: @escaping (OperationStoreError?) -> Void)
-}
-
-enum OperationStoreError: Error {
-    case cannotFetch(String)
-    case cannotCreate(String)
-    case cannotDelete(String)
-}

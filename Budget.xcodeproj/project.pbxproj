@@ -30,6 +30,8 @@
 		5C4461081F44838100EC7DD5 /* GenericTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4461071F44838100EC7DD5 /* GenericTableViewDataSource.swift */; };
 		5C44610C1F4488B900EC7DD5 /* OperationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C44610B1F4488B900EC7DD5 /* OperationCell.swift */; };
 		5C44610E1F4496C000EC7DD5 /* OperationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C44610D1F4496C000EC7DD5 /* OperationCell.xib */; };
+		5C4C68841FA896E4001F3355 /* OperationStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4C68831FA896E4001F3355 /* OperationStoreProtocol.swift */; };
+		5C4C68861FA8970E001F3355 /* OperationStoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4C68851FA8970E001F3355 /* OperationStoreError.swift */; };
 		5C60F1351F20EFDE006B1DB5 /* BalanceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C60F12F1F20EFDE006B1DB5 /* BalanceInteractor.swift */; };
 		5C60F1361F20EFDE006B1DB5 /* BalanceModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C60F1301F20EFDE006B1DB5 /* BalanceModels.swift */; };
 		5C60F1371F20EFDE006B1DB5 /* BalancePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C60F1311F20EFDE006B1DB5 /* BalancePresenter.swift */; };
@@ -92,6 +94,8 @@
 		5C4461071F44838100EC7DD5 /* GenericTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericTableViewDataSource.swift; sourceTree = "<group>"; };
 		5C44610B1F4488B900EC7DD5 /* OperationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationCell.swift; sourceTree = "<group>"; };
 		5C44610D1F4496C000EC7DD5 /* OperationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OperationCell.xib; sourceTree = "<group>"; };
+		5C4C68831FA896E4001F3355 /* OperationStoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationStoreProtocol.swift; sourceTree = "<group>"; };
+		5C4C68851FA8970E001F3355 /* OperationStoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationStoreError.swift; sourceTree = "<group>"; };
 		5C60F12F1F20EFDE006B1DB5 /* BalanceInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalanceInteractor.swift; sourceTree = "<group>"; };
 		5C60F1301F20EFDE006B1DB5 /* BalanceModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalanceModels.swift; sourceTree = "<group>"; };
 		5C60F1311F20EFDE006B1DB5 /* BalancePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalancePresenter.swift; sourceTree = "<group>"; };
@@ -165,6 +169,8 @@
 				5C3CED171F2A80B000DB145D /* ManagedOperation.swift */,
 				5C3CED1B1F2A80CF00DB145D /* Operation.swift */,
 				5C3CED181F2A80B000DB145D /* OperationCoreDataStore.swift */,
+				5C4C68851FA8970E001F3355 /* OperationStoreError.swift */,
+				5C4C68831FA896E4001F3355 /* OperationStoreProtocol.swift */,
 				5C3CED1D1F2A8A2F00DB145D /* OperationWorker.swift */,
 			);
 			path = "Operation Model";
@@ -634,6 +640,7 @@
 				5C88E5691F94FF630020E263 /* PushDownAnimator.swift in Sources */,
 				5C3CED1C1F2A80CF00DB145D /* Operation.swift in Sources */,
 				5C60F1371F20EFDE006B1DB5 /* BalancePresenter.swift in Sources */,
+				5C4C68841FA896E4001F3355 /* OperationStoreProtocol.swift in Sources */,
 				5C3CED191F2A80B000DB145D /* ManagedOperation.swift in Sources */,
 				5C61F8711F1691A4003F3AD9 /* AppDelegate.swift in Sources */,
 				5CBEEC401F2CF6A800CDB0E7 /* CreateOperationModels.swift in Sources */,
@@ -646,6 +653,7 @@
 				5C7CA5C21F965E04008192BF /* NavigationControllerDelegate.swift in Sources */,
 				5CBEEC431F2CF6A800CDB0E7 /* CreateOperationViewController.swift in Sources */,
 				5CC31B1E1F40D67E00AD2544 /* HistoryViewController.swift in Sources */,
+				5C4C68861FA8970E001F3355 /* OperationStoreError.swift in Sources */,
 				5CC31B061F40CD0B00AD2544 /* Array+Operation.swift in Sources */,
 				5C6ECDB61F98D3D8001AF1B7 /* NumberFormatter+Currency.swift in Sources */,
 				5C0EB5091F9F549C0089C4A1 /* DateFormatter+Cache.swift in Sources */,

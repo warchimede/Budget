@@ -283,11 +283,11 @@
 		5CC31B041F40CCDD00AD2544 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				5C087BC61FB4AF9D006DCC4D /* AppDelegate+Shortcuts.swift */,
 				5CC31B051F40CD0B00AD2544 /* Array+Operation.swift */,
 				5CB0B97B1F66E686009B00F8 /* Color+Amount.swift */,
 				5C0EB5081F9F549C0089C4A1 /* DateFormatter+Cache.swift */,
 				5C6ECDB51F98D3D8001AF1B7 /* NumberFormatter+Currency.swift */,
-				5C087BC61FB4AF9D006DCC4D /* AppDelegate+Shortcuts.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";

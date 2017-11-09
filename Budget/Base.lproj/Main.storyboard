@@ -54,7 +54,7 @@
                                             <constraint firstAttribute="height" constant="50" id="7GK-GQ-eSD"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="adUnitID" value="ca-app-pub-3940256099942544/6300978111"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="adUnitID" value="ca-app-pub-7814673314543067/2788088095"/>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="autoloadEnabled" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -142,7 +142,7 @@
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="autoloadEnabled" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="adUnitID" value="ca-app-pub-3940256099942544/6300978111"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="adUnitID" value="ca-app-pub-7814673314543067/2788088095"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="rootViewController" destination="EBW-rJ-yA4" id="w2M-Q9-12d"/>
@@ -268,7 +268,7 @@
                                             <constraint firstAttribute="height" constant="50" id="UGO-36-2k2"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="adUnitID" value="ca-app-pub-3940256099942544/6300978111"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="adUnitID" value="ca-app-pub-7814673314543067/2788088095"/>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="autoloadEnabled" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>

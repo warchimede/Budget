@@ -59,4 +59,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
     }
+
+    // MARK: Quick actions shortcuts
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        defer {
+            completionHandler(true)
+        }
+
+        handle(shortcutItem)
+    }
 }

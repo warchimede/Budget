@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		5C087BC71FB4AF9D006DCC4D /* AppDelegate+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C087BC61FB4AF9D006DCC4D /* AppDelegate+Shortcuts.swift */; };
 		5C0EB5091F9F549C0089C4A1 /* DateFormatter+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0EB5081F9F549C0089C4A1 /* DateFormatter+Cache.swift */; };
 		5C3CED191F2A80B000DB145D /* ManagedOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3CED171F2A80B000DB145D /* ManagedOperation.swift */; };
 		5C3CED1A1F2A80B000DB145D /* OperationCoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3CED181F2A80B000DB145D /* OperationCoreDataStore.swift */; };
@@ -85,6 +86,7 @@
 		24ACAD76286771F8FC745027 /* Pods-BudgetUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BudgetUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BudgetUITests/Pods-BudgetUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		250D050895FED8AA136DE3A0 /* Pods-Budget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Budget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Budget/Pods-Budget.debug.xcconfig"; sourceTree = "<group>"; };
 		2FD0DEBFBC285DB65500E4D2 /* Pods-BudgetTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BudgetTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BudgetTests/Pods-BudgetTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5C087BC61FB4AF9D006DCC4D /* AppDelegate+Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Shortcuts.swift"; sourceTree = "<group>"; };
 		5C0EB5081F9F549C0089C4A1 /* DateFormatter+Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Cache.swift"; sourceTree = "<group>"; };
 		5C3CED171F2A80B000DB145D /* ManagedOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedOperation.swift; sourceTree = "<group>"; };
 		5C3CED181F2A80B000DB145D /* OperationCoreDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationCoreDataStore.swift; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 				5CB0B97B1F66E686009B00F8 /* Color+Amount.swift */,
 				5C0EB5081F9F549C0089C4A1 /* DateFormatter+Cache.swift */,
 				5C6ECDB51F98D3D8001AF1B7 /* NumberFormatter+Currency.swift */,
+				5C087BC61FB4AF9D006DCC4D /* AppDelegate+Shortcuts.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -644,6 +647,7 @@
 				5C3CED191F2A80B000DB145D /* ManagedOperation.swift in Sources */,
 				5C61F8711F1691A4003F3AD9 /* AppDelegate.swift in Sources */,
 				5CBEEC401F2CF6A800CDB0E7 /* CreateOperationModels.swift in Sources */,
+				5C087BC71FB4AF9D006DCC4D /* AppDelegate+Shortcuts.swift in Sources */,
 				5CC31B1B1F40D67E00AD2544 /* HistoryModels.swift in Sources */,
 				5C61F8791F1691A4003F3AD9 /* Budget.xcdatamodeld in Sources */,
 				5C4461061F44830300EC7DD5 /* ModelDisplayable.swift in Sources */,

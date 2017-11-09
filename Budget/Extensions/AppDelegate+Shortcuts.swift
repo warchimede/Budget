@@ -23,6 +23,9 @@ extension AppDelegate {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let navigationController = (UIApplication.shared.keyWindow?.rootViewController as? UINavigationController)
 
+        // In case the stack is not empty
+        navigationController?.popToRootViewController(animated: false)
+
         switch type {
         case .history:
             let historyVC = storyBoard.instantiateViewController(withIdentifier: "HistoryViewController")

@@ -141,8 +141,8 @@
                                             <constraint firstAttribute="height" constant="50" id="tHv-pv-YDU"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="autoloadEnabled" value="YES"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="adUnitID" value="ca-app-pub-7814673314543067/2788088095"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="autoloadEnabled" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="rootViewController" destination="EBW-rJ-yA4" id="w2M-Q9-12d"/>

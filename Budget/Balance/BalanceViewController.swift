@@ -19,7 +19,6 @@ protocol BalanceDisplayLogic: class {
 class BalanceViewController: UIViewController {
     var interactor: BalanceBusinessLogic?
 
-    // TODO: Should move it somewhere else
     fileprivate let navigationControllerDelegate = NavigationControllerDelegate() // swiftlint:disable:this weak_delegate line_length
 
     // MARK: Object lifecycle

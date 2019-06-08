@@ -6,20 +6,6 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		5CBEEC271F2CD8DE00CDB0E7 /* Lint */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 5CBEEC281F2CD8DE00CDB0E7 /* Build configuration list for PBXAggregateTarget "Lint" */;
-			buildPhases = (
-				5CBEEC2B1F2CD8F100CDB0E7 /* ShellScript */,
-			);
-			dependencies = (
-			);
-			name = Lint;
-			productName = Lint;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		5C087BC71FB4AF9D006DCC4D /* AppDelegate+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C087BC61FB4AF9D006DCC4D /* AppDelegate+Shortcuts.swift */; };
 		5C0EB5091F9F549C0089C4A1 /* DateFormatter+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0EB5081F9F549C0089C4A1 /* DateFormatter+Cache.swift */; };
@@ -341,6 +327,7 @@
 				5C61F86B1F1691A4003F3AD9 /* Resources */,
 				577A5B03340BFEE5A233E8D7 /* [CP] Embed Pods Frameworks */,
 				DA6F3E89E60CEF8639F29F3E /* [CP] Copy Pods Resources */,
+				5C769C6022AC613C009C5925 /* Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -423,11 +410,6 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 5C61F86C1F1691A4003F3AD9;
 					};
-					5CBEEC271F2CD8DE00CDB0E7 = {
-						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 5CVNZF3PXG;
-						ProvisioningStyle = Automatic;
-					};
 				};
 			};
 			buildConfigurationList = 5C61F8681F1691A4003F3AD9 /* Build configuration list for PBXProject "Budget" */;
@@ -435,6 +417,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -446,7 +429,6 @@
 				5C61F86C1F1691A4003F3AD9 /* Budget */,
 				5C61F8831F1691A4003F3AD9 /* BudgetTests */,
 				5C61F88E1F1691A4003F3AD9 /* BudgetUITests */,
-				5CBEEC271F2CD8DE00CDB0E7 /* Lint */,
 			);
 		};
 /* End PBXProject section */
@@ -557,18 +539,23 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Budget/Pods-Budget-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5CBEEC2B1F2CD8F100CDB0E7 /* ShellScript */ = {
+		5C769C6022AC613C009C5925 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		7155A1918A5FE6979DAADBE3 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -953,22 +940,6 @@
 			};
 			name = Release;
 		};
-		5CBEEC291F2CD8DE00CDB0E7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEVELOPMENT_TEAM = 5CVNZF3PXG;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		5CBEEC2A1F2CD8DE00CDB0E7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEVELOPMENT_TEAM = 5CVNZF3PXG;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1004,15 +975,6 @@
 			buildConfigurations = (
 				5C61F89F1F1691A4003F3AD9 /* Debug */,
 				5C61F8A01F1691A4003F3AD9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5CBEEC281F2CD8DE00CDB0E7 /* Build configuration list for PBXAggregateTarget "Lint" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5CBEEC291F2CD8DE00CDB0E7 /* Debug */,
-				5CBEEC2A1F2CD8DE00CDB0E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

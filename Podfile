@@ -6,6 +6,7 @@ target 'Budget' do
   use_frameworks!
 
   # Pods for Budget
+  pod 'SwiftLint'
   pod 'Fabric'
   pod 'Crashlytics'
   pod 'Firebase/Core'

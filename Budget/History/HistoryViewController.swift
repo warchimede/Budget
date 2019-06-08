@@ -132,7 +132,7 @@ extension HistoryViewController: HistoryDisplayLogic {
     }
 
     func displayDeletion(viewModel: History.Deletion.ViewModel) {
-        let idx = operationsTableViewDataSource?.models.index {
+      let idx = operationsTableViewDataSource?.models.firstIndex {
             $0 == viewModel.operation
         }
 

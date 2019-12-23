@@ -15,7 +15,7 @@ extension DateFormatter {
         formatter.dateStyle = .medium
         formatter.timeStyle = .none
         return formatter
-    } ()
+    }()
 
     static func formattedString(from date: Date) -> String {
         return dateFormatter.string(from: date)

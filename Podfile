@@ -7,4 +7,8 @@ target 'Budget' do
 
   # Pods for Budget
   pod 'SwiftLint'
+
+  script_phase :name => '🧹 SwiftLint',
+  :script => '$PODS_ROOT/SwiftLint/swiftlint lint',
+  :execution_position => :before_compile
 end

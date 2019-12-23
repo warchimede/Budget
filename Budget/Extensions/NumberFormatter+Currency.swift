@@ -14,7 +14,7 @@ extension NumberFormatter {
         formatter.locale = .current
         formatter.numberStyle = .currency
         return formatter
-    } ()
+    }()
 
     static func formattedString(from amount: Decimal) -> String? {
         return currencyFormatter.string(from: amount as NSNumber)

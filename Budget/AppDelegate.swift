@@ -6,11 +6,8 @@
 //  Copyright © 2017 William Archimede. All rights reserved.
 //
 
-import UIKit
 import CoreData
-import Fabric
-import Crashlytics
-import Firebase
+import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,11 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-
-        Fabric.with([Crashlytics.self])
-        FirebaseApp.configure()
-        GADMobileAds.configure(withApplicationID: "ca-app-pub-7814673314543067~6958433240")
-
         return true
     }
 

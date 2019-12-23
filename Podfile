@@ -7,21 +7,4 @@ target 'Budget' do
 
   # Pods for Budget
   pod 'SwiftLint'
-  pod 'Fabric'
-  pod 'Crashlytics'
-  pod 'Firebase/Core'
-  pod 'Firebase/AdMob'
-
-  target 'BudgetTests' do
-    inherit! :search_paths
-    # Pods for testing
-    pod 'Firebase/Core'
-    pod 'Firebase/AdMob'
-  end
-
-  target 'BudgetUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
 end
